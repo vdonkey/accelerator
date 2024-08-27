@@ -9,12 +9,12 @@ import (
 
 	"github.com/golang/protobuf/jsonpb"
 
-	"github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/features/outbound"
-	"github.com/v2fly/v2ray-core/v5/features/routing"
-	"github.com/v2fly/v2ray-core/v5/infra/conf/v5cfg"
+	"github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/features/outbound"
+	"github.com/vdonkey/accelerator/v5/features/routing"
+	"github.com/vdonkey/accelerator/v5/infra/conf/v5cfg"
 )
 
 type Rule struct {

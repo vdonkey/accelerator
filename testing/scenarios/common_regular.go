@@ -10,18 +10,18 @@ import (
 	"os/exec"
 )
 
-func BuildV2Ray() error {
+func BuildAccelerator() error {
 	genTestBinaryPath()
 	if _, err := os.Stat(testBinaryPath); err == nil {
 		return nil
 	}
 
-	fmt.Printf("Building V2Ray into path (%s)\n", testBinaryPath)
+	fmt.Printf("Building Vdonkey into path (%s)\n", testBinaryPath)
 	cmd := exec.Command("go", "build", "-o="+testBinaryPath, GetSourcePath())
 	return cmd.Run()
 }
 
-func RunV2RayProtobuf(config []byte) *exec.Cmd {
+func RunAcceleratorProtobuf(config []byte) *exec.Cmd {
 	genTestBinaryPath()
 	proc := exec.Command(testBinaryPath, "run", "-format=pb")
 	proc.Stdin = bytes.NewBuffer(config)

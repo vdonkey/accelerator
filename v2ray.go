@@ -5,22 +5,22 @@ import (
 	"reflect"
 	sync "sync"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/environment"
-	"github.com/v2fly/v2ray-core/v5/common/environment/systemnetworkimpl"
-	"github.com/v2fly/v2ray-core/v5/common/environment/transientstorageimpl"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/features"
-	"github.com/v2fly/v2ray-core/v5/features/dns"
-	"github.com/v2fly/v2ray-core/v5/features/dns/localdns"
-	"github.com/v2fly/v2ray-core/v5/features/inbound"
-	"github.com/v2fly/v2ray-core/v5/features/outbound"
-	"github.com/v2fly/v2ray-core/v5/features/policy"
-	"github.com/v2fly/v2ray-core/v5/features/routing"
-	"github.com/v2fly/v2ray-core/v5/features/stats"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/environment"
+	"github.com/vdonkey/accelerator/v5/common/environment/systemnetworkimpl"
+	"github.com/vdonkey/accelerator/v5/common/environment/transientstorageimpl"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/features"
+	"github.com/vdonkey/accelerator/v5/features/dns"
+	"github.com/vdonkey/accelerator/v5/features/dns/localdns"
+	"github.com/vdonkey/accelerator/v5/features/inbound"
+	"github.com/vdonkey/accelerator/v5/features/outbound"
+	"github.com/vdonkey/accelerator/v5/features/policy"
+	"github.com/vdonkey/accelerator/v5/features/routing"
+	"github.com/vdonkey/accelerator/v5/features/stats"
 )
 
-// Server is an instance of V2Ray. At any time, there must be at most one Server instance running.
+// Server is an instance of Vdonkey. At any time, there must be at most one Server instance running.
 type Server interface {
 	common.Runnable
 }
@@ -87,7 +87,7 @@ func (r *resolution) resolve(allFeatures []features.Feature) (bool, error) {
 	return true, err
 }
 
-// Instance combines all functionalities in V2Ray.
+// Instance combines all functionalities in Vdonkey.
 type Instance struct {
 	access             sync.Mutex
 	features           []features.Feature
@@ -171,9 +171,9 @@ func RequireFeatures(ctx context.Context, callback interface{}) error {
 	return v.RequireFeatures(callback)
 }
 
-// New returns a new V2Ray instance based on given configuration.
+// New returns a new Vdonkey instance based on given configuration.
 // The instance is not started at this point.
-// To ensure V2Ray instance works properly, the config must contain one Dispatcher, one InboundHandlerManager and one OutboundHandlerManager. Other features are optional.
+// To ensure Vdonkey instance works properly, the config must contain one Dispatcher, one InboundHandlerManager and one OutboundHandlerManager. Other features are optional.
 func New(config *Config) (*Instance, error) {
 	server := &Instance{ctx: context.Background()}
 
@@ -262,7 +262,7 @@ func (s *Instance) Type() interface{} {
 	return ServerType()
 }
 
-// Close shutdown the V2Ray instance.
+// Close shutdown the Vdonkey instance.
 func (s *Instance) Close() error {
 	s.access.Lock()
 	defer s.access.Unlock()
@@ -345,10 +345,10 @@ func (s *Instance) GetFeature(featureType interface{}) features.Feature {
 	return getFeature(s.features, reflect.TypeOf(featureType))
 }
 
-// Start starts the V2Ray instance, including all registered features. When Start returns error, the state of the instance is unknown.
-// A V2Ray instance can be started only once. Upon closing, the instance is not guaranteed to start again.
+// Start starts the Vdonkey instance, including all registered features. When Start returns error, the state of the instance is unknown.
+// A Vdonkey instance can be started only once. Upon closing, the instance is not guaranteed to start again.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 func (s *Instance) Start() error {
 	s.access.Lock()
 	defer s.access.Unlock()
@@ -360,7 +360,7 @@ func (s *Instance) Start() error {
 		}
 	}
 
-	newError("V2Ray ", Version(), " started").AtWarning().WriteToLog()
+	newError("Vdonkey ", Version(), " started").AtWarning().WriteToLog()
 
 	return nil
 }

@@ -13,9 +13,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	StatsService_GetStats_FullMethodName    = "/v2ray.core.app.stats.command.StatsService/GetStats"
-	StatsService_QueryStats_FullMethodName  = "/v2ray.core.app.stats.command.StatsService/QueryStats"
-	StatsService_GetSysStats_FullMethodName = "/v2ray.core.app.stats.command.StatsService/GetSysStats"
+	StatsService_GetStats_FullMethodName    = "/accelerator.core.app.stats.command.StatsService/GetStats"
+	StatsService_QueryStats_FullMethodName  = "/accelerator.core.app.stats.command.StatsService/QueryStats"
+	StatsService_GetSysStats_FullMethodName = "/accelerator.core.app.stats.command.StatsService/GetSysStats"
 )
 
 // StatsServiceClient is the client API for StatsService service.
@@ -156,7 +156,7 @@ func _StatsService_GetSysStats_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StatsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "v2ray.core.app.stats.command.StatsService",
+	ServiceName: "accelerator.core.app.stats.command.StatsService",
 	HandlerType: (*StatsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -6,10 +6,10 @@ package dns
 import (
 	"golang.org/x/net/dns/dnsmessage"
 
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/strmatcher"
-	"github.com/v2fly/v2ray-core/v5/common/uuid"
-	"github.com/v2fly/v2ray-core/v5/features/dns"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/strmatcher"
+	"github.com/vdonkey/accelerator/v5/common/uuid"
+	"github.com/vdonkey/accelerator/v5/features/dns"
 )
 
 var typeMap = map[DomainMatchingType]strmatcher.Type{
@@ -84,5 +84,5 @@ func toReqTypes(option dns.IPOption) []dnsmessage.Type {
 
 func generateRandomTag() string {
 	id := uuid.New()
-	return "v2ray.system." + id.String()
+	return "accelerator.system." + id.String()
 }

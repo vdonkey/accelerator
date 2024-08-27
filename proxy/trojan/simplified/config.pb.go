@@ -1,9 +1,9 @@
 package simplified
 
 import (
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	packetaddr "github.com/v2fly/v2ray-core/v5/common/net/packetaddr"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	packetaddr "github.com/vdonkey/accelerator/v5/common/net/packetaddr"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -23,7 +23,7 @@ type ServerConfig struct {
 	unknownFields protoimpl.UnknownFields
 
 	Users          []string                  `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
-	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,2,opt,name=packet_encoding,json=packetEncoding,proto3,enum=v2ray.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
+	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,2,opt,name=packet_encoding,json=packetEncoding,proto3,enum=accelerator.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
 }
 
 func (x *ServerConfig) Reset() {
@@ -193,14 +193,14 @@ func file_proxy_trojan_simplified_config_proto_rawDescGZIP() []byte {
 
 var file_proxy_trojan_simplified_config_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proxy_trojan_simplified_config_proto_goTypes = []interface{}{
-	(*ServerConfig)(nil),           // 0: v2ray.core.proxy.trojan.simplified.ServerConfig
-	(*ClientConfig)(nil),           // 1: v2ray.core.proxy.trojan.simplified.ClientConfig
-	(packetaddr.PacketAddrType)(0), // 2: v2ray.core.net.packetaddr.PacketAddrType
-	(*net.IPOrDomain)(nil),         // 3: v2ray.core.common.net.IPOrDomain
+	(*ServerConfig)(nil),           // 0: accelerator.core.proxy.trojan.simplified.ServerConfig
+	(*ClientConfig)(nil),           // 1: accelerator.core.proxy.trojan.simplified.ClientConfig
+	(packetaddr.PacketAddrType)(0), // 2: accelerator.core.net.packetaddr.PacketAddrType
+	(*net.IPOrDomain)(nil),         // 3: accelerator.core.common.net.IPOrDomain
 }
 var file_proxy_trojan_simplified_config_proto_depIdxs = []int32{
-	2, // 0: v2ray.core.proxy.trojan.simplified.ServerConfig.packet_encoding:type_name -> v2ray.core.net.packetaddr.PacketAddrType
-	3, // 1: v2ray.core.proxy.trojan.simplified.ClientConfig.address:type_name -> v2ray.core.common.net.IPOrDomain
+	2, // 0: accelerator.core.proxy.trojan.simplified.ServerConfig.packet_encoding:type_name -> accelerator.core.net.packetaddr.PacketAddrType
+	3, // 1: accelerator.core.proxy.trojan.simplified.ClientConfig.address:type_name -> accelerator.core.common.net.IPOrDomain
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

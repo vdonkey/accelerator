@@ -310,21 +310,21 @@ func file_app_subscription_specs_abstract_spec_proto_rawDescGZIP() []byte {
 
 var file_app_subscription_specs_abstract_spec_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_app_subscription_specs_abstract_spec_proto_goTypes = []interface{}{
-	(*ServerConfiguration)(nil),      // 0: v2ray.core.app.subscription.specs.ServerConfiguration
-	(*SubscriptionServerConfig)(nil), // 1: v2ray.core.app.subscription.specs.SubscriptionServerConfig
-	(*SubscriptionDocument)(nil),     // 2: v2ray.core.app.subscription.specs.SubscriptionDocument
-	nil,                              // 3: v2ray.core.app.subscription.specs.SubscriptionServerConfig.MetadataEntry
-	nil,                              // 4: v2ray.core.app.subscription.specs.SubscriptionDocument.MetadataEntry
+	(*ServerConfiguration)(nil),      // 0: accelerator.core.app.subscription.specs.ServerConfiguration
+	(*SubscriptionServerConfig)(nil), // 1: accelerator.core.app.subscription.specs.SubscriptionServerConfig
+	(*SubscriptionDocument)(nil),     // 2: accelerator.core.app.subscription.specs.SubscriptionDocument
+	nil,                              // 3: accelerator.core.app.subscription.specs.SubscriptionServerConfig.MetadataEntry
+	nil,                              // 4: accelerator.core.app.subscription.specs.SubscriptionDocument.MetadataEntry
 	(*anypb.Any)(nil),                // 5: google.protobuf.Any
 }
 var file_app_subscription_specs_abstract_spec_proto_depIdxs = []int32{
-	5, // 0: v2ray.core.app.subscription.specs.ServerConfiguration.protocol_settings:type_name -> google.protobuf.Any
-	5, // 1: v2ray.core.app.subscription.specs.ServerConfiguration.transport_settings:type_name -> google.protobuf.Any
-	5, // 2: v2ray.core.app.subscription.specs.ServerConfiguration.security_settings:type_name -> google.protobuf.Any
-	3, // 3: v2ray.core.app.subscription.specs.SubscriptionServerConfig.metadata:type_name -> v2ray.core.app.subscription.specs.SubscriptionServerConfig.MetadataEntry
-	0, // 4: v2ray.core.app.subscription.specs.SubscriptionServerConfig.configuration:type_name -> v2ray.core.app.subscription.specs.ServerConfiguration
-	4, // 5: v2ray.core.app.subscription.specs.SubscriptionDocument.metadata:type_name -> v2ray.core.app.subscription.specs.SubscriptionDocument.MetadataEntry
-	1, // 6: v2ray.core.app.subscription.specs.SubscriptionDocument.server:type_name -> v2ray.core.app.subscription.specs.SubscriptionServerConfig
+	5, // 0: accelerator.core.app.subscription.specs.ServerConfiguration.protocol_settings:type_name -> google.protobuf.Any
+	5, // 1: accelerator.core.app.subscription.specs.ServerConfiguration.transport_settings:type_name -> google.protobuf.Any
+	5, // 2: accelerator.core.app.subscription.specs.ServerConfiguration.security_settings:type_name -> google.protobuf.Any
+	3, // 3: accelerator.core.app.subscription.specs.SubscriptionServerConfig.metadata:type_name -> accelerator.core.app.subscription.specs.SubscriptionServerConfig.MetadataEntry
+	0, // 4: accelerator.core.app.subscription.specs.SubscriptionServerConfig.configuration:type_name -> accelerator.core.app.subscription.specs.ServerConfiguration
+	4, // 5: accelerator.core.app.subscription.specs.SubscriptionDocument.metadata:type_name -> accelerator.core.app.subscription.specs.SubscriptionDocument.MetadataEntry
+	1, // 6: accelerator.core.app.subscription.specs.SubscriptionDocument.server:type_name -> accelerator.core.app.subscription.specs.SubscriptionServerConfig
 	7, // [7:7] is the sub-list for method output_type
 	7, // [7:7] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name

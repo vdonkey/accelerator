@@ -6,16 +6,16 @@ import (
 	"context"
 	"time"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/app/subscription"
-	"github.com/v2fly/v2ray-core/v5/app/subscription/entries"
-	"github.com/v2fly/v2ray-core/v5/app/subscription/entries/nonnative/nonnativeifce"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/task"
-	"github.com/v2fly/v2ray-core/v5/features/extension"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/app/subscription"
+	"github.com/vdonkey/accelerator/v5/app/subscription/entries"
+	"github.com/vdonkey/accelerator/v5/app/subscription/entries/nonnative/nonnativeifce"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/task"
+	"github.com/vdonkey/accelerator/v5/features/extension"
 )
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 type SubscriptionManagerImpl struct {
 	config *subscription.Config

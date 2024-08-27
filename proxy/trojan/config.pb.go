@@ -1,8 +1,8 @@
 package trojan
 
 import (
-	packetaddr "github.com/v2fly/v2ray-core/v5/common/net/packetaddr"
-	protocol "github.com/v2fly/v2ray-core/v5/common/protocol"
+	packetaddr "github.com/vdonkey/accelerator/v5/common/net/packetaddr"
+	protocol "github.com/vdonkey/accelerator/v5/common/protocol"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -196,7 +196,7 @@ type ServerConfig struct {
 
 	Users          []*protocol.User          `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
 	Fallbacks      []*Fallback               `protobuf:"bytes,3,rep,name=fallbacks,proto3" json:"fallbacks,omitempty"`
-	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=v2ray.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
+	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=accelerator.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
 }
 
 func (x *ServerConfig) Reset() {
@@ -316,19 +316,19 @@ func file_proxy_trojan_config_proto_rawDescGZIP() []byte {
 
 var file_proxy_trojan_config_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proxy_trojan_config_proto_goTypes = []interface{}{
-	(*Account)(nil),                 // 0: v2ray.core.proxy.trojan.Account
-	(*Fallback)(nil),                // 1: v2ray.core.proxy.trojan.Fallback
-	(*ClientConfig)(nil),            // 2: v2ray.core.proxy.trojan.ClientConfig
-	(*ServerConfig)(nil),            // 3: v2ray.core.proxy.trojan.ServerConfig
-	(*protocol.ServerEndpoint)(nil), // 4: v2ray.core.common.protocol.ServerEndpoint
-	(*protocol.User)(nil),           // 5: v2ray.core.common.protocol.User
-	(packetaddr.PacketAddrType)(0),  // 6: v2ray.core.net.packetaddr.PacketAddrType
+	(*Account)(nil),                 // 0: accelerator.core.proxy.trojan.Account
+	(*Fallback)(nil),                // 1: accelerator.core.proxy.trojan.Fallback
+	(*ClientConfig)(nil),            // 2: accelerator.core.proxy.trojan.ClientConfig
+	(*ServerConfig)(nil),            // 3: accelerator.core.proxy.trojan.ServerConfig
+	(*protocol.ServerEndpoint)(nil), // 4: accelerator.core.common.protocol.ServerEndpoint
+	(*protocol.User)(nil),           // 5: accelerator.core.common.protocol.User
+	(packetaddr.PacketAddrType)(0),  // 6: accelerator.core.net.packetaddr.PacketAddrType
 }
 var file_proxy_trojan_config_proto_depIdxs = []int32{
-	4, // 0: v2ray.core.proxy.trojan.ClientConfig.server:type_name -> v2ray.core.common.protocol.ServerEndpoint
-	5, // 1: v2ray.core.proxy.trojan.ServerConfig.users:type_name -> v2ray.core.common.protocol.User
-	1, // 2: v2ray.core.proxy.trojan.ServerConfig.fallbacks:type_name -> v2ray.core.proxy.trojan.Fallback
-	6, // 3: v2ray.core.proxy.trojan.ServerConfig.packet_encoding:type_name -> v2ray.core.net.packetaddr.PacketAddrType
+	4, // 0: accelerator.core.proxy.trojan.ClientConfig.server:type_name -> accelerator.core.common.protocol.ServerEndpoint
+	5, // 1: accelerator.core.proxy.trojan.ServerConfig.users:type_name -> accelerator.core.common.protocol.User
+	1, // 2: accelerator.core.proxy.trojan.ServerConfig.fallbacks:type_name -> accelerator.core.proxy.trojan.Fallback
+	6, // 3: accelerator.core.proxy.trojan.ServerConfig.packet_encoding:type_name -> accelerator.core.net.packetaddr.PacketAddrType
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

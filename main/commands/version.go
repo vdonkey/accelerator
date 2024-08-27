@@ -3,15 +3,15 @@ package commands
 import (
 	"fmt"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/main/commands/base"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
-// CmdVersion prints V2Ray Versions
+// CmdVersion prints Vdonkey Versions
 var CmdVersion = &base.Command{
 	UsageLine: "{{.Exec}} version",
-	Short:     "print V2Ray version",
-	Long: `Prints the build information for V2Ray.
+	Short:     "print Vdonkey version",
+	Long: `Prints the build information for Vdonkey.
 `,
 	Run: executeVersion,
 }

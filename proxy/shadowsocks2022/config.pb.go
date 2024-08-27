@@ -1,8 +1,8 @@
 package shadowsocks2022
 
 import (
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -144,11 +144,11 @@ func file_proxy_shadowsocks2022_config_proto_rawDescGZIP() []byte {
 
 var file_proxy_shadowsocks2022_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proxy_shadowsocks2022_config_proto_goTypes = []interface{}{
-	(*ClientConfig)(nil),   // 0: v2ray.core.proxy.shadowsocks2022.ClientConfig
-	(*net.IPOrDomain)(nil), // 1: v2ray.core.common.net.IPOrDomain
+	(*ClientConfig)(nil),   // 0: accelerator.core.proxy.shadowsocks2022.ClientConfig
+	(*net.IPOrDomain)(nil), // 1: accelerator.core.common.net.IPOrDomain
 }
 var file_proxy_shadowsocks2022_config_proto_depIdxs = []int32{
-	1, // 0: v2ray.core.proxy.shadowsocks2022.ClientConfig.address:type_name -> v2ray.core.common.net.IPOrDomain
+	1, // 0: accelerator.core.proxy.shadowsocks2022.ClientConfig.address:type_name -> accelerator.core.common.net.IPOrDomain
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

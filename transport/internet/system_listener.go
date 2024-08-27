@@ -11,8 +11,8 @@ import (
 
 	"github.com/pires/go-proxyproto"
 
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/session"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/session"
 )
 
 var effectiveListener = DefaultListener{}
@@ -153,7 +153,7 @@ func (dl *DefaultListener) ListenPacket(ctx context.Context, addr net.Addr, sock
 // RegisterListenerController adds a controller to the effective system listener.
 // The controller can be used to operate on file descriptors before they are put into use.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 func RegisterListenerController(controller func(network, address string, fd uintptr) error) error {
 	if controller == nil {
 		return newError("nil listener controller")

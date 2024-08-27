@@ -8,9 +8,9 @@ package router
 
 import (
 	any "github.com/golang/protobuf/ptypes/any"
-	routercommon "github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	routercommon "github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -113,7 +113,7 @@ type RoutingRule struct {
 	// Deprecated: Do not use.
 	NetworkList *net.NetworkList `protobuf:"bytes,5,opt,name=network_list,json=networkList,proto3" json:"network_list,omitempty"`
 	// List of networks for matching.
-	Networks []net.Network `protobuf:"varint,13,rep,packed,name=networks,proto3,enum=v2ray.core.common.net.Network" json:"networks,omitempty"`
+	Networks []net.Network `protobuf:"varint,13,rep,packed,name=networks,proto3,enum=accelerator.core.common.net.Network" json:"networks,omitempty"`
 	// List of CIDRs for source IP address matching.
 	//
 	// Deprecated: Do not use.
@@ -660,7 +660,7 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DomainStrategy DomainStrategy   `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=v2ray.core.app.router.DomainStrategy" json:"domain_strategy,omitempty"`
+	DomainStrategy DomainStrategy   `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=accelerator.core.app.router.DomainStrategy" json:"domain_strategy,omitempty"`
 	Rule           []*RoutingRule   `protobuf:"bytes,2,rep,name=rule,proto3" json:"rule,omitempty"`
 	BalancingRule  []*BalancingRule `protobuf:"bytes,3,rep,name=balancing_rule,json=balancingRule,proto3" json:"balancing_rule,omitempty"`
 }
@@ -912,7 +912,7 @@ type SimplifiedConfig struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DomainStrategy DomainStrategy           `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=v2ray.core.app.router.DomainStrategy" json:"domain_strategy,omitempty"`
+	DomainStrategy DomainStrategy           `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=accelerator.core.app.router.DomainStrategy" json:"domain_strategy,omitempty"`
 	Rule           []*SimplifiedRoutingRule `protobuf:"bytes,2,rep,name=rule,proto3" json:"rule,omitempty"`
 	BalancingRule  []*BalancingRule         `protobuf:"bytes,3,rep,name=balancing_rule,json=balancingRule,proto3" json:"balancing_rule,omitempty"`
 }
@@ -1200,51 +1200,51 @@ func file_app_router_config_proto_rawDescGZIP() []byte {
 var file_app_router_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_app_router_config_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_app_router_config_proto_goTypes = []interface{}{
-	(DomainStrategy)(0),             // 0: v2ray.core.app.router.DomainStrategy
-	(*RoutingRule)(nil),             // 1: v2ray.core.app.router.RoutingRule
-	(*BalancingRule)(nil),           // 2: v2ray.core.app.router.BalancingRule
-	(*StrategyWeight)(nil),          // 3: v2ray.core.app.router.StrategyWeight
-	(*StrategyRandomConfig)(nil),    // 4: v2ray.core.app.router.StrategyRandomConfig
-	(*StrategyLeastPingConfig)(nil), // 5: v2ray.core.app.router.StrategyLeastPingConfig
-	(*StrategyLeastLoadConfig)(nil), // 6: v2ray.core.app.router.StrategyLeastLoadConfig
-	(*Config)(nil),                  // 7: v2ray.core.app.router.Config
-	(*SimplifiedRoutingRule)(nil),   // 8: v2ray.core.app.router.SimplifiedRoutingRule
-	(*SimplifiedConfig)(nil),        // 9: v2ray.core.app.router.SimplifiedConfig
-	(*routercommon.Domain)(nil),     // 10: v2ray.core.app.router.routercommon.Domain
-	(*routercommon.CIDR)(nil),       // 11: v2ray.core.app.router.routercommon.CIDR
-	(*routercommon.GeoIP)(nil),      // 12: v2ray.core.app.router.routercommon.GeoIP
-	(*net.PortRange)(nil),           // 13: v2ray.core.common.net.PortRange
-	(*net.PortList)(nil),            // 14: v2ray.core.common.net.PortList
-	(*net.NetworkList)(nil),         // 15: v2ray.core.common.net.NetworkList
-	(net.Network)(0),                // 16: v2ray.core.common.net.Network
-	(*routercommon.GeoSite)(nil),    // 17: v2ray.core.app.router.routercommon.GeoSite
+	(DomainStrategy)(0),             // 0: accelerator.core.app.router.DomainStrategy
+	(*RoutingRule)(nil),             // 1: accelerator.core.app.router.RoutingRule
+	(*BalancingRule)(nil),           // 2: accelerator.core.app.router.BalancingRule
+	(*StrategyWeight)(nil),          // 3: accelerator.core.app.router.StrategyWeight
+	(*StrategyRandomConfig)(nil),    // 4: accelerator.core.app.router.StrategyRandomConfig
+	(*StrategyLeastPingConfig)(nil), // 5: accelerator.core.app.router.StrategyLeastPingConfig
+	(*StrategyLeastLoadConfig)(nil), // 6: accelerator.core.app.router.StrategyLeastLoadConfig
+	(*Config)(nil),                  // 7: accelerator.core.app.router.Config
+	(*SimplifiedRoutingRule)(nil),   // 8: accelerator.core.app.router.SimplifiedRoutingRule
+	(*SimplifiedConfig)(nil),        // 9: accelerator.core.app.router.SimplifiedConfig
+	(*routercommon.Domain)(nil),     // 10: accelerator.core.app.router.routercommon.Domain
+	(*routercommon.CIDR)(nil),       // 11: accelerator.core.app.router.routercommon.CIDR
+	(*routercommon.GeoIP)(nil),      // 12: accelerator.core.app.router.routercommon.GeoIP
+	(*net.PortRange)(nil),           // 13: accelerator.core.common.net.PortRange
+	(*net.PortList)(nil),            // 14: accelerator.core.common.net.PortList
+	(*net.NetworkList)(nil),         // 15: accelerator.core.common.net.NetworkList
+	(net.Network)(0),                // 16: accelerator.core.common.net.Network
+	(*routercommon.GeoSite)(nil),    // 17: accelerator.core.app.router.routercommon.GeoSite
 	(*any.Any)(nil),                 // 18: google.protobuf.Any
 }
 var file_app_router_config_proto_depIdxs = []int32{
-	10, // 0: v2ray.core.app.router.RoutingRule.domain:type_name -> v2ray.core.app.router.routercommon.Domain
-	11, // 1: v2ray.core.app.router.RoutingRule.cidr:type_name -> v2ray.core.app.router.routercommon.CIDR
-	12, // 2: v2ray.core.app.router.RoutingRule.geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	13, // 3: v2ray.core.app.router.RoutingRule.port_range:type_name -> v2ray.core.common.net.PortRange
-	14, // 4: v2ray.core.app.router.RoutingRule.port_list:type_name -> v2ray.core.common.net.PortList
-	15, // 5: v2ray.core.app.router.RoutingRule.network_list:type_name -> v2ray.core.common.net.NetworkList
-	16, // 6: v2ray.core.app.router.RoutingRule.networks:type_name -> v2ray.core.common.net.Network
-	11, // 7: v2ray.core.app.router.RoutingRule.source_cidr:type_name -> v2ray.core.app.router.routercommon.CIDR
-	12, // 8: v2ray.core.app.router.RoutingRule.source_geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	14, // 9: v2ray.core.app.router.RoutingRule.source_port_list:type_name -> v2ray.core.common.net.PortList
-	17, // 10: v2ray.core.app.router.RoutingRule.geo_domain:type_name -> v2ray.core.app.router.routercommon.GeoSite
-	18, // 11: v2ray.core.app.router.BalancingRule.strategy_settings:type_name -> google.protobuf.Any
-	3,  // 12: v2ray.core.app.router.StrategyLeastLoadConfig.costs:type_name -> v2ray.core.app.router.StrategyWeight
-	0,  // 13: v2ray.core.app.router.Config.domain_strategy:type_name -> v2ray.core.app.router.DomainStrategy
-	1,  // 14: v2ray.core.app.router.Config.rule:type_name -> v2ray.core.app.router.RoutingRule
-	2,  // 15: v2ray.core.app.router.Config.balancing_rule:type_name -> v2ray.core.app.router.BalancingRule
-	10, // 16: v2ray.core.app.router.SimplifiedRoutingRule.domain:type_name -> v2ray.core.app.router.routercommon.Domain
-	12, // 17: v2ray.core.app.router.SimplifiedRoutingRule.geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	15, // 18: v2ray.core.app.router.SimplifiedRoutingRule.networks:type_name -> v2ray.core.common.net.NetworkList
-	12, // 19: v2ray.core.app.router.SimplifiedRoutingRule.source_geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	17, // 20: v2ray.core.app.router.SimplifiedRoutingRule.geo_domain:type_name -> v2ray.core.app.router.routercommon.GeoSite
-	0,  // 21: v2ray.core.app.router.SimplifiedConfig.domain_strategy:type_name -> v2ray.core.app.router.DomainStrategy
-	8,  // 22: v2ray.core.app.router.SimplifiedConfig.rule:type_name -> v2ray.core.app.router.SimplifiedRoutingRule
-	2,  // 23: v2ray.core.app.router.SimplifiedConfig.balancing_rule:type_name -> v2ray.core.app.router.BalancingRule
+	10, // 0: accelerator.core.app.router.RoutingRule.domain:type_name -> accelerator.core.app.router.routercommon.Domain
+	11, // 1: accelerator.core.app.router.RoutingRule.cidr:type_name -> accelerator.core.app.router.routercommon.CIDR
+	12, // 2: accelerator.core.app.router.RoutingRule.geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	13, // 3: accelerator.core.app.router.RoutingRule.port_range:type_name -> accelerator.core.common.net.PortRange
+	14, // 4: accelerator.core.app.router.RoutingRule.port_list:type_name -> accelerator.core.common.net.PortList
+	15, // 5: accelerator.core.app.router.RoutingRule.network_list:type_name -> accelerator.core.common.net.NetworkList
+	16, // 6: accelerator.core.app.router.RoutingRule.networks:type_name -> accelerator.core.common.net.Network
+	11, // 7: accelerator.core.app.router.RoutingRule.source_cidr:type_name -> accelerator.core.app.router.routercommon.CIDR
+	12, // 8: accelerator.core.app.router.RoutingRule.source_geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	14, // 9: accelerator.core.app.router.RoutingRule.source_port_list:type_name -> accelerator.core.common.net.PortList
+	17, // 10: accelerator.core.app.router.RoutingRule.geo_domain:type_name -> accelerator.core.app.router.routercommon.GeoSite
+	18, // 11: accelerator.core.app.router.BalancingRule.strategy_settings:type_name -> google.protobuf.Any
+	3,  // 12: accelerator.core.app.router.StrategyLeastLoadConfig.costs:type_name -> accelerator.core.app.router.StrategyWeight
+	0,  // 13: accelerator.core.app.router.Config.domain_strategy:type_name -> accelerator.core.app.router.DomainStrategy
+	1,  // 14: accelerator.core.app.router.Config.rule:type_name -> accelerator.core.app.router.RoutingRule
+	2,  // 15: accelerator.core.app.router.Config.balancing_rule:type_name -> accelerator.core.app.router.BalancingRule
+	10, // 16: accelerator.core.app.router.SimplifiedRoutingRule.domain:type_name -> accelerator.core.app.router.routercommon.Domain
+	12, // 17: accelerator.core.app.router.SimplifiedRoutingRule.geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	15, // 18: accelerator.core.app.router.SimplifiedRoutingRule.networks:type_name -> accelerator.core.common.net.NetworkList
+	12, // 19: accelerator.core.app.router.SimplifiedRoutingRule.source_geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	17, // 20: accelerator.core.app.router.SimplifiedRoutingRule.geo_domain:type_name -> accelerator.core.app.router.routercommon.GeoSite
+	0,  // 21: accelerator.core.app.router.SimplifiedConfig.domain_strategy:type_name -> accelerator.core.app.router.DomainStrategy
+	8,  // 22: accelerator.core.app.router.SimplifiedConfig.rule:type_name -> accelerator.core.app.router.SimplifiedRoutingRule
+	2,  // 23: accelerator.core.app.router.SimplifiedConfig.balancing_rule:type_name -> accelerator.core.app.router.BalancingRule
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name

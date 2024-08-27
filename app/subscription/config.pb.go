@@ -1,7 +1,7 @@
 package subscription
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -220,11 +220,11 @@ func file_app_subscription_config_proto_rawDescGZIP() []byte {
 
 var file_app_subscription_config_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_app_subscription_config_proto_goTypes = []interface{}{
-	(*ImportSource)(nil), // 0: v2ray.core.app.subscription.ImportSource
-	(*Config)(nil),       // 1: v2ray.core.app.subscription.Config
+	(*ImportSource)(nil), // 0: accelerator.core.app.subscription.ImportSource
+	(*Config)(nil),       // 1: accelerator.core.app.subscription.Config
 }
 var file_app_subscription_config_proto_depIdxs = []int32{
-	0, // 0: v2ray.core.app.subscription.Config.imports:type_name -> v2ray.core.app.subscription.ImportSource
+	0, // 0: accelerator.core.app.subscription.Config.imports:type_name -> accelerator.core.app.subscription.ImportSource
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

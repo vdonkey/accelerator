@@ -1,8 +1,8 @@
 package freedom
 
 import (
-	protocol "github.com/v2fly/v2ray-core/v5/common/protocol"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	protocol "github.com/vdonkey/accelerator/v5/common/protocol"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -169,12 +169,12 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DomainStrategy Config_DomainStrategy `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=v2ray.core.proxy.freedom.Config_DomainStrategy" json:"domain_strategy,omitempty"`
+	DomainStrategy Config_DomainStrategy `protobuf:"varint,1,opt,name=domain_strategy,json=domainStrategy,proto3,enum=accelerator.core.proxy.freedom.Config_DomainStrategy" json:"domain_strategy,omitempty"`
 	// Deprecated: Marked as deprecated in proxy/freedom/config.proto.
 	Timeout             uint32               `protobuf:"varint,2,opt,name=timeout,proto3" json:"timeout,omitempty"`
 	DestinationOverride *DestinationOverride `protobuf:"bytes,3,opt,name=destination_override,json=destinationOverride,proto3" json:"destination_override,omitempty"`
 	UserLevel           uint32               `protobuf:"varint,4,opt,name=user_level,json=userLevel,proto3" json:"user_level,omitempty"`
-	ProtocolReplacement ProtocolReplacement  `protobuf:"varint,5,opt,name=protocol_replacement,json=protocolReplacement,proto3,enum=v2ray.core.proxy.freedom.ProtocolReplacement" json:"protocol_replacement,omitempty"`
+	ProtocolReplacement ProtocolReplacement  `protobuf:"varint,5,opt,name=protocol_replacement,json=protocolReplacement,proto3,enum=accelerator.core.proxy.freedom.ProtocolReplacement" json:"protocol_replacement,omitempty"`
 }
 
 func (x *Config) Reset() {
@@ -251,7 +251,7 @@ type SimplifiedConfig struct {
 	unknownFields protoimpl.UnknownFields
 
 	DestinationOverride *DestinationOverride `protobuf:"bytes,3,opt,name=destination_override,json=destinationOverride,proto3" json:"destination_override,omitempty"`
-	ProtocolReplacement ProtocolReplacement  `protobuf:"varint,5,opt,name=protocol_replacement,json=protocolReplacement,proto3,enum=v2ray.core.proxy.freedom.ProtocolReplacement" json:"protocol_replacement,omitempty"`
+	ProtocolReplacement ProtocolReplacement  `protobuf:"varint,5,opt,name=protocol_replacement,json=protocolReplacement,proto3,enum=accelerator.core.proxy.freedom.ProtocolReplacement" json:"protocol_replacement,omitempty"`
 }
 
 func (x *SimplifiedConfig) Reset() {
@@ -387,20 +387,20 @@ func file_proxy_freedom_config_proto_rawDescGZIP() []byte {
 var file_proxy_freedom_config_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_proxy_freedom_config_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_proxy_freedom_config_proto_goTypes = []any{
-	(ProtocolReplacement)(0),        // 0: v2ray.core.proxy.freedom.ProtocolReplacement
-	(Config_DomainStrategy)(0),      // 1: v2ray.core.proxy.freedom.Config.DomainStrategy
-	(*DestinationOverride)(nil),     // 2: v2ray.core.proxy.freedom.DestinationOverride
-	(*Config)(nil),                  // 3: v2ray.core.proxy.freedom.Config
-	(*SimplifiedConfig)(nil),        // 4: v2ray.core.proxy.freedom.SimplifiedConfig
-	(*protocol.ServerEndpoint)(nil), // 5: v2ray.core.common.protocol.ServerEndpoint
+	(ProtocolReplacement)(0),        // 0: accelerator.core.proxy.freedom.ProtocolReplacement
+	(Config_DomainStrategy)(0),      // 1: accelerator.core.proxy.freedom.Config.DomainStrategy
+	(*DestinationOverride)(nil),     // 2: accelerator.core.proxy.freedom.DestinationOverride
+	(*Config)(nil),                  // 3: accelerator.core.proxy.freedom.Config
+	(*SimplifiedConfig)(nil),        // 4: accelerator.core.proxy.freedom.SimplifiedConfig
+	(*protocol.ServerEndpoint)(nil), // 5: accelerator.core.common.protocol.ServerEndpoint
 }
 var file_proxy_freedom_config_proto_depIdxs = []int32{
-	5, // 0: v2ray.core.proxy.freedom.DestinationOverride.server:type_name -> v2ray.core.common.protocol.ServerEndpoint
-	1, // 1: v2ray.core.proxy.freedom.Config.domain_strategy:type_name -> v2ray.core.proxy.freedom.Config.DomainStrategy
-	2, // 2: v2ray.core.proxy.freedom.Config.destination_override:type_name -> v2ray.core.proxy.freedom.DestinationOverride
-	0, // 3: v2ray.core.proxy.freedom.Config.protocol_replacement:type_name -> v2ray.core.proxy.freedom.ProtocolReplacement
-	2, // 4: v2ray.core.proxy.freedom.SimplifiedConfig.destination_override:type_name -> v2ray.core.proxy.freedom.DestinationOverride
-	0, // 5: v2ray.core.proxy.freedom.SimplifiedConfig.protocol_replacement:type_name -> v2ray.core.proxy.freedom.ProtocolReplacement
+	5, // 0: accelerator.core.proxy.freedom.DestinationOverride.server:type_name -> accelerator.core.common.protocol.ServerEndpoint
+	1, // 1: accelerator.core.proxy.freedom.Config.domain_strategy:type_name -> accelerator.core.proxy.freedom.Config.DomainStrategy
+	2, // 2: accelerator.core.proxy.freedom.Config.destination_override:type_name -> accelerator.core.proxy.freedom.DestinationOverride
+	0, // 3: accelerator.core.proxy.freedom.Config.protocol_replacement:type_name -> accelerator.core.proxy.freedom.ProtocolReplacement
+	2, // 4: accelerator.core.proxy.freedom.SimplifiedConfig.destination_override:type_name -> accelerator.core.proxy.freedom.DestinationOverride
+	0, // 5: accelerator.core.proxy.freedom.SimplifiedConfig.protocol_replacement:type_name -> accelerator.core.proxy.freedom.ProtocolReplacement
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name

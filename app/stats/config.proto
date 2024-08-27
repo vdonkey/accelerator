@@ -1,16 +1,16 @@
 syntax = "proto3";
 
-package v2ray.core.app.stats;
-option csharp_namespace = "V2Ray.Core.App.Stats";
-option go_package = "github.com/v2fly/v2ray-core/v5/app/stats";
-option java_package = "com.v2ray.core.app.stats";
+package accelerator.core.app.stats;
+option csharp_namespace = "Vdonkey.Core.App.Stats";
+option go_package = "github.com/vdonkey/accelerator/v5/app/stats";
+option java_package = "com.accelerator.core.app.stats";
 option java_multiple_files = true;
 
 import "common/protoext/extensions.proto";
 
 message Config {
-  option (v2ray.core.common.protoext.message_opt).type = "service";
-  option (v2ray.core.common.protoext.message_opt).short_name = "stats";
+  option (accelerator.core.common.protoext.message_opt).type = "service";
+  option (accelerator.core.common.protoext.message_opt).short_name = "stats";
 }
 
 message ChannelConfig {

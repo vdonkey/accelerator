@@ -1,10 +1,10 @@
 package dns
 
 import (
-	"github.com/v2fly/v2ray-core/v5/common/errors"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/features"
+	"github.com/vdonkey/accelerator/v5/common/errors"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/features"
 )
 
 // IPOption is an object for IP query options.
@@ -26,9 +26,9 @@ func (opt IPOption) IsValid() bool {
 	return opt.IPv4Enable || opt.IPv6Enable
 }
 
-// Client is a V2Ray feature for querying DNS information.
+// Client is a Vdonkey feature for querying DNS information.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 type Client interface {
 	features.Feature
 
@@ -38,21 +38,21 @@ type Client interface {
 
 // IPv4Lookup is an optional feature for querying IPv4 addresses only.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 type IPv4Lookup interface {
 	LookupIPv4(domain string) ([]net.IP, error)
 }
 
 // IPv6Lookup is an optional feature for querying IPv6 addresses only.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 type IPv6Lookup interface {
 	LookupIPv6(domain string) ([]net.IP, error)
 }
 
 // LookupIPWithOption is a helper function for querying DNS information from a dns.Client with dns.IPOption.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 func LookupIPWithOption(client Client, domain string, option IPOption) ([]net.IP, error) {
 	if option.FakeEnable {
 		if clientWithFakeDNS, ok := client.(ClientWithFakeDNS); ok {
@@ -78,7 +78,7 @@ func LookupIPWithOption(client Client, domain string, option IPOption) ([]net.IP
 
 // ClientType returns the type of Client interface. Can be used for implementing common.HasType.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 func ClientType() interface{} {
 	return (*Client)(nil)
 }

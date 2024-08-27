@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package v2ray.core.transport.internet.kcp;
-option csharp_namespace = "V2Ray.Core.Transport.Internet.Kcp";
-option go_package = "github.com/v2fly/v2ray-core/v5/transport/internet/kcp";
-option java_package = "com.v2ray.core.transport.internet.kcp";
+package accelerator.core.transport.internet.kcp;
+option csharp_namespace = "Vdonkey.Core.Transport.Internet.Kcp";
+option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/kcp";
+option java_package = "com.accelerator.core.transport.internet.kcp";
 option java_multiple_files = true;
 
 import "google/protobuf/any.proto";
@@ -50,11 +50,11 @@ message EncryptionSeed {
 }
 
 message Config {
-  option (v2ray.core.common.protoext.message_opt).type = "transport";
-  option (v2ray.core.common.protoext.message_opt).short_name = "kcp";
-  option (v2ray.core.common.protoext.message_opt).allow_restricted_mode_load = true;
+  option (accelerator.core.common.protoext.message_opt).type = "transport";
+  option (accelerator.core.common.protoext.message_opt).short_name = "kcp";
+  option (accelerator.core.common.protoext.message_opt).allow_restricted_mode_load = true;
 
-  option (v2ray.core.common.protoext.message_opt).transport_original_name = "mkcp";
+  option (accelerator.core.common.protoext.message_opt).transport_original_name = "mkcp";
 
   MTU mtu = 1;
   TTI tti = 2;

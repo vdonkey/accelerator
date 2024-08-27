@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	. "github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/uuid"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	. "github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/uuid"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess"
 )
 
 func TestAlwaysValidStrategy(t *testing.T) {

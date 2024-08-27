@@ -7,9 +7,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/v2fly/v2ray-core/v5/common"
+	"github.com/vdonkey/accelerator/v5/common"
 
-	"github.com/v2fly/v2ray-core/v5/transport/internet/request"
+	"github.com/vdonkey/accelerator/v5/transport/internet/request"
 )
 
 func newClient(config *ClientConfig) request.SessionAssemblerClient {

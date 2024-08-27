@@ -11,16 +11,16 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/v2fly/v2ray-core/v5/app/router"
-	"github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/platform/filesystem"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/protocol/http"
-	"github.com/v2fly/v2ray-core/v5/common/session"
-	"github.com/v2fly/v2ray-core/v5/features/routing"
-	routing_session "github.com/v2fly/v2ray-core/v5/features/routing/session"
+	"github.com/vdonkey/accelerator/v5/app/router"
+	"github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/platform/filesystem"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/protocol/http"
+	"github.com/vdonkey/accelerator/v5/common/session"
+	"github.com/vdonkey/accelerator/v5/features/routing"
+	routing_session "github.com/vdonkey/accelerator/v5/features/routing/session"
 )
 
 func init() {
@@ -36,7 +36,7 @@ func init() {
 	geoipPath := filepath.Join(tempPath, "geoip.dat")
 	geositePath := filepath.Join(tempPath, "geosite.dat")
 
-	os.Setenv("v2ray.location.asset", tempPath)
+	os.Setenv("accelerator.location.asset", tempPath)
 
 	if _, err := os.Stat(geoipPath); err != nil && errors.Is(err, fs.ErrNotExist) {
 		common.Must(os.MkdirAll(tempPath, 0o755))
@@ -105,7 +105,7 @@ func TestRoutingRule(t *testing.T) {
 					output: true,
 				},
 				{
-					input:  withOutbound(&session.Outbound{Target: net.TCPDestination(net.DomainAddress("v2ray.co"), 80)}),
+					input:  withOutbound(&session.Outbound{Target: net.TCPDestination(net.DomainAddress("accelerator.co"), 80)}),
 					output: false,
 				},
 				{

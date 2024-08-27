@@ -1,7 +1,7 @@
 package httprt
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -262,13 +262,13 @@ func file_transport_internet_request_roundtripper_httprt_config_proto_rawDescGZI
 
 var file_transport_internet_request_roundtripper_httprt_config_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_transport_internet_request_roundtripper_httprt_config_proto_goTypes = []interface{}{
-	(*ClientConfig)(nil), // 0: v2ray.core.transport.internet.request.roundtripper.httprt.ClientConfig
-	(*ServerConfig)(nil), // 1: v2ray.core.transport.internet.request.roundtripper.httprt.ServerConfig
-	(*HTTPConfig)(nil),   // 2: v2ray.core.transport.internet.request.roundtripper.httprt.HTTPConfig
+	(*ClientConfig)(nil), // 0: accelerator.core.transport.internet.request.roundtripper.httprt.ClientConfig
+	(*ServerConfig)(nil), // 1: accelerator.core.transport.internet.request.roundtripper.httprt.ServerConfig
+	(*HTTPConfig)(nil),   // 2: accelerator.core.transport.internet.request.roundtripper.httprt.HTTPConfig
 }
 var file_transport_internet_request_roundtripper_httprt_config_proto_depIdxs = []int32{
-	2, // 0: v2ray.core.transport.internet.request.roundtripper.httprt.ClientConfig.http:type_name -> v2ray.core.transport.internet.request.roundtripper.httprt.HTTPConfig
-	2, // 1: v2ray.core.transport.internet.request.roundtripper.httprt.ServerConfig.http:type_name -> v2ray.core.transport.internet.request.roundtripper.httprt.HTTPConfig
+	2, // 0: accelerator.core.transport.internet.request.roundtripper.httprt.ClientConfig.http:type_name -> accelerator.core.transport.internet.request.roundtripper.httprt.HTTPConfig
+	2, // 1: accelerator.core.transport.internet.request.roundtripper.httprt.ServerConfig.http:type_name -> accelerator.core.transport.internet.request.roundtripper.httprt.HTTPConfig
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

@@ -1,7 +1,7 @@
 package assembly
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"
@@ -121,12 +121,12 @@ func file_transport_internet_request_assembly_config_proto_rawDescGZIP() []byte 
 
 var file_transport_internet_request_assembly_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_transport_internet_request_assembly_config_proto_goTypes = []interface{}{
-	(*Config)(nil),    // 0: v2ray.core.transport.internet.request.assembly.Config
+	(*Config)(nil),    // 0: accelerator.core.transport.internet.request.assembly.Config
 	(*anypb.Any)(nil), // 1: google.protobuf.Any
 }
 var file_transport_internet_request_assembly_config_proto_depIdxs = []int32{
-	1, // 0: v2ray.core.transport.internet.request.assembly.Config.assembler:type_name -> google.protobuf.Any
-	1, // 1: v2ray.core.transport.internet.request.assembly.Config.roundtripper:type_name -> google.protobuf.Any
+	1, // 0: accelerator.core.transport.internet.request.assembly.Config.assembler:type_name -> google.protobuf.Any
+	1, // 1: accelerator.core.transport.internet.request.assembly.Config.roundtripper:type_name -> google.protobuf.Any
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

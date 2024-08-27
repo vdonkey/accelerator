@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/v2fly/v2ray-core/v5/common/platform"
-	"github.com/v2fly/v2ray-core/v5/features"
+	"github.com/vdonkey/accelerator/v5/common/platform"
+	"github.com/vdonkey/accelerator/v5/features"
 )
 
 // Timeout contains limits for connection timeout.
@@ -54,7 +54,7 @@ type System struct {
 	Buffer                Buffer
 }
 
-// Session is session based settings for controlling V2Ray requests. It contains various settings (or limits) that may differ for different users in the context.
+// Session is session based settings for controlling Vdonkey requests. It contains various settings (or limits) that may differ for different users in the context.
 type Session struct {
 	Timeouts Timeout // Timeout settings
 	Stats    Stats
@@ -63,20 +63,20 @@ type Session struct {
 
 // Manager is a feature that provides Policy for the given user by its id or level.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 type Manager interface {
 	features.Feature
 
 	// ForLevel returns the Session policy for the given user level.
 	ForLevel(level uint32) Session
 
-	// ForSystem returns the System policy for V2Ray system.
+	// ForSystem returns the System policy for Vdonkey system.
 	ForSystem() System
 }
 
 // ManagerType returns the type of Manager interface. Can be used to implement common.HasType.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 func ManagerType() interface{} {
 	return (*Manager)(nil)
 }
@@ -84,7 +84,7 @@ func ManagerType() interface{} {
 var defaultBufferSize int32
 
 func init() {
-	const key = "v2ray.ray.buffer.size"
+	const key = "accelerator.ray.buffer.size"
 	const defaultValue = -17
 	size := platform.EnvFlag{
 		Name:    key,

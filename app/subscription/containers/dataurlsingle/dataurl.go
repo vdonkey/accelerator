@@ -6,11 +6,11 @@ import (
 
 	"github.com/vincent-petithory/dataurl"
 
-	"github.com/v2fly/v2ray-core/v5/app/subscription/containers"
-	"github.com/v2fly/v2ray-core/v5/common"
+	"github.com/vdonkey/accelerator/v5/app/subscription/containers"
+	"github.com/vdonkey/accelerator/v5/common"
 )
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 func newSingularDataURLParser() containers.SubscriptionContainerDocumentParser {
 	return &parser{}
@@ -26,7 +26,7 @@ func (p parser) ParseSubscriptionContainerDocument(rawConfig []byte) (*container
 	if dataURL.MediaType.Type != "application" {
 		return nil, newError("unsupported media type: ", dataURL.MediaType.Type)
 	}
-	if !strings.HasPrefix(dataURL.MediaType.Subtype, "vnd.v2ray.subscription-singular") {
+	if !strings.HasPrefix(dataURL.MediaType.Subtype, "vnd.accelerator.subscription-singular") {
 		return nil, newError("unsupported media subtype: ", dataURL.MediaType.Subtype)
 	}
 	result := &containers.Container{}

@@ -1,6 +1,6 @@
-// Package core provides an entry point to use V2Ray core functionalities.
+// Package core provides an entry point to use Vdonkey core functionalities.
 //
-// V2Ray makes it possible to accept incoming network connections with certain
+// Vdonkey makes it possible to accept incoming network connections with certain
 // protocol, process the data, and send them through another connection with
 // the same or a difference protocol on demand.
 //
@@ -9,22 +9,22 @@
 // connections.
 package core
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 import (
 	"runtime"
 
-	"github.com/v2fly/v2ray-core/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/common/serial"
 )
 
 var (
 	version  = "5.17.1"
 	build    = "Custom"
-	codename = "V2Fly, a community-driven edition of V2Ray."
+	codename = "Vdonkey, a community-driven edition of Accelerator."
 	intro    = "A unified platform for anti-censorship."
 )
 
-// Version returns V2Ray's version as a string, in the form of "x.y.z" where x, y and z are numbers.
+// Version returns Vdonkey's version as a string, in the form of "x.y.z" where x, y and z are numbers.
 // ".z" part may be omitted in regular releases.
 func Version() string {
 	return version
@@ -33,7 +33,7 @@ func Version() string {
 // VersionStatement returns a list of strings representing the full version info.
 func VersionStatement() []string {
 	return []string{
-		serial.Concat("V2Ray ", Version(), " (", codename, ") ", build, " (", runtime.Version(), " ", runtime.GOOS, "/", runtime.GOARCH, ")"),
+		serial.Concat("Vdonkey ", Version(), " (", codename, ") ", build, " (", runtime.Version(), " ", runtime.GOOS, "/", runtime.GOARCH, ")"),
 		intro,
 	}
 }

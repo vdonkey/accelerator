@@ -6,12 +6,12 @@ import (
 
 	"github.com/vincent-petithory/dataurl"
 
-	"github.com/v2fly/v2ray-core/v5/app/subscription"
-	"github.com/v2fly/v2ray-core/v5/app/subscription/documentfetcher"
-	"github.com/v2fly/v2ray-core/v5/common"
+	"github.com/vdonkey/accelerator/v5/app/subscription"
+	"github.com/vdonkey/accelerator/v5/app/subscription/documentfetcher"
+	"github.com/vdonkey/accelerator/v5/common"
 )
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 func newDataURLFetcher() *dataURLFetcher {
 	return &dataURLFetcher{}
@@ -31,7 +31,7 @@ func (d *dataURLFetcher) DownloadDocument(ctx context.Context, source *subscript
 	if dataURL.MediaType.Type != "application" {
 		return nil, newError("unsupported media type: ", dataURL.MediaType.Type)
 	}
-	if !strings.HasPrefix(dataURL.MediaType.Subtype, "vnd.v2ray.subscription") {
+	if !strings.HasPrefix(dataURL.MediaType.Subtype, "vnd.accelerator.subscription") {
 		return nil, newError("unsupported media subtype: ", dataURL.MediaType.Subtype)
 	}
 	return []byte(source.Url), nil

@@ -7,7 +7,7 @@ import (
 
 	"github.com/vincent-petithory/dataurl"
 
-	"github.com/v2fly/v2ray-core/v5/main/commands/base"
+	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
 var cmdEncodeDataURLContentType *string
@@ -16,7 +16,7 @@ var cmdEncodeDataURL = &base.Command{
 	UsageLine: "{{.Exec}} engineering encodeDataURL",
 	Flag: func() flag.FlagSet {
 		fs := flag.NewFlagSet("", flag.ExitOnError)
-		cmdEncodeDataURLContentType = fs.String("type", "application/vnd.v2ray.subscription-singular", "")
+		cmdEncodeDataURLContentType = fs.String("type", "application/vnd.accelerator.subscription-singular", "")
 		return *fs
 	}(),
 	Run: func(cmd *base.Command, args []string) {

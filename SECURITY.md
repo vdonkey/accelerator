@@ -2,25 +2,25 @@
 
 ## 受支持的版本 Supported Versions
 
-目前 v2ray-core 项目由 [V2Fly 社区](https://github.com/v2fly) 继续提供代码维护，由于精力有限且项目复杂度较高，只维护主线代码的功能和安全性完整。原则上主页的兼容性保证继续遵循，
+目前 accelerator 项目由 [Vdonkey 社区](https://github.com/vdonkey) 继续提供代码维护，由于精力有限且项目复杂度较高，只维护主线代码的功能和安全性完整。原则上主页的兼容性保证继续遵循，
 如有例外另行说明。
 
-Currently v2ray-core project is maintained by [V2Fly community](https://github.com/v2fly). Feature and security guarantee may only be limited to the
+Currently accelerator project is maintained by [Vdonkey community](https://github.com/vdonkey). Feature and security guarantee may only be limited to the
 master branch, though we would still try our best to follow the compatibility claims listed on the official website.
 
 
 ## 汇报安全风险 Reporting a Vulnerability
 
-使用邮箱: security |at| v2fly.org。
+使用邮箱: security |at| vdonkey.org。
 
-Report to email: security |at| v2fly.org.
+Report to email: security |at| vdonkey.org.
 
 GPG public key:
 
 ```
 pub   rsa4096 2020-06-02 [SC] [有效至：2022-01-02]
       E2E35E27914FB007C0D4B6DDB117BA3BE8B494A7
-uid           [ 绝对 ] V2Fly Developers <dev@v2fly.org>
+uid           [ 绝对 ] Vdonkey Developers <dev@vdonkey.org>
 sub   rsa4096 2020-06-02 [E] [有效至：2022-01-02]
 sub   rsa4096 2020-11-08 [S] [有效至：2022-01-02] // 用于 Debian / Ubuntu 签名
 

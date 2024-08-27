@@ -8,17 +8,17 @@ import (
 
 	"gvisor.dev/gvisor/pkg/tcpip/stack"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/app/tun/device"
-	"github.com/v2fly/v2ray-core/v5/app/tun/device/gvisor"
-	"github.com/v2fly/v2ray-core/v5/app/tun/tunsorter"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net/packetaddr"
-	"github.com/v2fly/v2ray-core/v5/features/policy"
-	"github.com/v2fly/v2ray-core/v5/features/routing"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/app/tun/device"
+	"github.com/vdonkey/accelerator/v5/app/tun/device/gvisor"
+	"github.com/vdonkey/accelerator/v5/app/tun/tunsorter"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net/packetaddr"
+	"github.com/vdonkey/accelerator/v5/features/policy"
+	"github.com/vdonkey/accelerator/v5/features/routing"
 )
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 type TUN struct {
 	ctx           context.Context

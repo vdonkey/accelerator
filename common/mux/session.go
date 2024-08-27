@@ -3,9 +3,9 @@ package mux
 import (
 	"sync"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/buf"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/buf"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
 )
 
 type SessionManager struct {

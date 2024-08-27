@@ -1,12 +1,12 @@
 package routing
 
 import (
-	"github.com/v2fly/v2ray-core/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/net"
 )
 
 // Context is a feature to store connection information for routing.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 type Context interface {
 	// GetInboundTag returns the tag of the inbound the connection was from.
 	GetInboundTag() string

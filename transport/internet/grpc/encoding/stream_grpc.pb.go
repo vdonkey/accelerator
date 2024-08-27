@@ -13,7 +13,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GunService_Tun_FullMethodName = "/v2ray.core.transport.internet.grpc.encoding.GunService/Tun"
+	GunService_Tun_FullMethodName = "/accelerator.core.transport.internet.grpc.encoding.GunService/Tun"
 )
 
 // GunServiceClient is the client API for GunService service.
@@ -120,7 +120,7 @@ func (x *gunServiceTunServer) Recv() (*Hunk, error) {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GunService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "v2ray.core.transport.internet.grpc.encoding.GunService",
+	ServiceName: "accelerator.core.transport.internet.grpc.encoding.GunService",
 	HandlerType: (*GunServiceServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

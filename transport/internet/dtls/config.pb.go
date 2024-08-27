@@ -1,7 +1,7 @@
 package dtls
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -66,7 +66,7 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mode                   DTLSMode `protobuf:"varint,1,opt,name=mode,proto3,enum=v2ray.core.transport.internet.dtls.DTLSMode" json:"mode,omitempty"`
+	Mode                   DTLSMode `protobuf:"varint,1,opt,name=mode,proto3,enum=accelerator.core.transport.internet.dtls.DTLSMode" json:"mode,omitempty"`
 	Psk                    []byte   `protobuf:"bytes,2,opt,name=psk,proto3" json:"psk,omitempty"`
 	Mtu                    uint32   `protobuf:"varint,3,opt,name=mtu,proto3" json:"mtu,omitempty"`
 	ReplayProtectionWindow uint32   `protobuf:"varint,4,opt,name=replay_protection_window,json=replayProtectionWindow,proto3" json:"replay_protection_window,omitempty"`
@@ -183,11 +183,11 @@ func file_transport_internet_dtls_config_proto_rawDescGZIP() []byte {
 var file_transport_internet_dtls_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_transport_internet_dtls_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_transport_internet_dtls_config_proto_goTypes = []any{
-	(DTLSMode)(0),  // 0: v2ray.core.transport.internet.dtls.DTLSMode
-	(*Config)(nil), // 1: v2ray.core.transport.internet.dtls.Config
+	(DTLSMode)(0),  // 0: accelerator.core.transport.internet.dtls.DTLSMode
+	(*Config)(nil), // 1: accelerator.core.transport.internet.dtls.Config
 }
 var file_transport_internet_dtls_config_proto_depIdxs = []int32{
-	0, // 0: v2ray.core.transport.internet.dtls.Config.mode:type_name -> v2ray.core.transport.internet.dtls.DTLSMode
+	0, // 0: accelerator.core.transport.internet.dtls.Config.mode:type_name -> accelerator.core.transport.internet.dtls.DTLSMode
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

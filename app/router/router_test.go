@@ -6,14 +6,14 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	. "github.com/v2fly/v2ray-core/v5/app/router"
-	"github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/session"
-	"github.com/v2fly/v2ray-core/v5/features/outbound"
-	routing_session "github.com/v2fly/v2ray-core/v5/features/routing/session"
-	"github.com/v2fly/v2ray-core/v5/testing/mocks"
+	. "github.com/vdonkey/accelerator/v5/app/router"
+	"github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/session"
+	"github.com/vdonkey/accelerator/v5/features/outbound"
+	routing_session "github.com/vdonkey/accelerator/v5/features/routing/session"
+	"github.com/vdonkey/accelerator/v5/testing/mocks"
 )
 
 type mockOutboundManager struct {
@@ -136,7 +136,7 @@ func TestLeastLoadBalancer(t *testing.T) {
 		Manager:         mockOhm,
 		HandlerSelector: mockHs,
 	}, nil))
-	ctx := session.ContextWithOutbound(context.Background(), &session.Outbound{Target: net.TCPDestination(net.DomainAddress("v2ray.com"), 80)})
+	ctx := session.ContextWithOutbound(context.Background(), &session.Outbound{Target: net.TCPDestination(net.DomainAddress("accelerator.com"), 80)})
 	route, err := r.PickRoute(routing_session.AsRoutingContext(ctx))
 	common.Must(err)
 	if tag := route.GetOutboundTag(); tag != "test1" {

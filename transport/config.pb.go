@@ -1,7 +1,7 @@
 package transport
 
 import (
-	internet "github.com/v2fly/v2ray-core/v5/transport/internet"
+	internet "github.com/vdonkey/accelerator/v5/transport/internet"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -16,7 +16,7 @@ const (
 )
 
 // Global transport settings. This affects all type of connections that go
-// through V2Ray. Deprecated. Use each settings in StreamConfig.
+// through Vdonkey. Deprecated. Use each settings in StreamConfig.
 //
 // Deprecated: Marked as deprecated in transport/config.proto.
 type Config struct {
@@ -104,11 +104,11 @@ func file_transport_config_proto_rawDescGZIP() []byte {
 
 var file_transport_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_transport_config_proto_goTypes = []interface{}{
-	(*Config)(nil),                   // 0: v2ray.core.transport.Config
-	(*internet.TransportConfig)(nil), // 1: v2ray.core.transport.internet.TransportConfig
+	(*Config)(nil),                   // 0: accelerator.core.transport.Config
+	(*internet.TransportConfig)(nil), // 1: accelerator.core.transport.internet.TransportConfig
 }
 var file_transport_config_proto_depIdxs = []int32{
-	1, // 0: v2ray.core.transport.Config.transport_settings:type_name -> v2ray.core.transport.internet.TransportConfig
+	1, // 0: accelerator.core.transport.Config.transport_settings:type_name -> accelerator.core.transport.internet.TransportConfig
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

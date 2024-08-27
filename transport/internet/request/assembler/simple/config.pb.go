@@ -1,7 +1,7 @@
 package simple
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -232,8 +232,8 @@ func file_transport_internet_request_assembler_simple_config_proto_rawDescGZIP()
 
 var file_transport_internet_request_assembler_simple_config_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_transport_internet_request_assembler_simple_config_proto_goTypes = []interface{}{
-	(*ClientConfig)(nil), // 0: v2ray.core.transport.internet.request.assembler.simple.ClientConfig
-	(*ServerConfig)(nil), // 1: v2ray.core.transport.internet.request.assembler.simple.ServerConfig
+	(*ClientConfig)(nil), // 0: accelerator.core.transport.internet.request.assembler.simple.ClientConfig
+	(*ServerConfig)(nil), // 1: accelerator.core.transport.internet.request.assembler.simple.ServerConfig
 }
 var file_transport_internet_request_assembler_simple_config_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

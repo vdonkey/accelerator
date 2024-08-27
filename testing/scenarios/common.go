@@ -15,16 +15,16 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/app/dispatcher"
-	"github.com/v2fly/v2ray-core/v5/app/proxyman"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/errors"
-	"github.com/v2fly/v2ray-core/v5/common/log"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/retry"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/common/units"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/app/dispatcher"
+	"github.com/vdonkey/accelerator/v5/app/proxyman"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/errors"
+	"github.com/vdonkey/accelerator/v5/common/log"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/retry"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/common/units"
 )
 
 func xor(b []byte) []byte {
@@ -75,7 +75,7 @@ func InitializeServerConfigs(configs ...*core.Config) ([]*exec.Cmd, error) {
 }
 
 func InitializeServerConfig(config *core.Config) (*exec.Cmd, error) {
-	err := BuildV2Ray()
+	err := BuildAccelerator()
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func InitializeServerConfig(config *core.Config) (*exec.Cmd, error) {
 	if err != nil {
 		return nil, err
 	}
-	proc := RunV2RayProtobuf(configBytes)
+	proc := RunAcceleratorProtobuf(configBytes)
 
 	if err := proc.Start(); err != nil {
 		return nil, err
@@ -103,14 +103,14 @@ func genTestBinaryPath() {
 	testBinaryPathGen.Do(func() {
 		var tempDir string
 		common.Must(retry.Timed(5, 100).On(func() error {
-			dir, err := os.MkdirTemp("", "v2ray")
+			dir, err := os.MkdirTemp("", "accelerator")
 			if err != nil {
 				return err
 			}
 			tempDir = dir
 			return nil
 		}))
-		file := filepath.Join(tempDir, "v2ray.test")
+		file := filepath.Join(tempDir, "accelerator.test")
 		if runtime.GOOS == "windows" {
 			file += ".exe"
 		}
@@ -120,7 +120,7 @@ func genTestBinaryPath() {
 }
 
 func GetSourcePath() string {
-	return filepath.Join("github.com", "v2fly", "v2ray-core", "v5", "main")
+	return filepath.Join("github.com", "vdonkey", "accelerator", "v5", "main")
 }
 
 func CloseAllServers(servers []*exec.Cmd) {

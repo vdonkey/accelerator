@@ -1,8 +1,8 @@
 package proxyman
 
 import (
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	internet "github.com/v2fly/v2ray-core/v5/transport/internet"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	internet "github.com/vdonkey/accelerator/v5/transport/internet"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"
@@ -210,7 +210,7 @@ type AllocationStrategy struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type AllocationStrategy_Type `protobuf:"varint,1,opt,name=type,proto3,enum=v2ray.core.app.proxyman.AllocationStrategy_Type" json:"type,omitempty"`
+	Type AllocationStrategy_Type `protobuf:"varint,1,opt,name=type,proto3,enum=accelerator.core.app.proxyman.AllocationStrategy_Type" json:"type,omitempty"`
 	// Number of handlers (ports) running in parallel.
 	// Default value is 3 if unset.
 	Concurrency *AllocationStrategy_AllocationStrategyConcurrency `protobuf:"bytes,2,opt,name=concurrency,proto3" json:"concurrency,omitempty"`
@@ -356,7 +356,7 @@ type ReceiverConfig struct {
 	// Deprecated. Use sniffing_settings.
 	//
 	// Deprecated: Marked as deprecated in app/proxyman/config.proto.
-	DomainOverride   []KnownProtocols `protobuf:"varint,7,rep,packed,name=domain_override,json=domainOverride,proto3,enum=v2ray.core.app.proxyman.KnownProtocols" json:"domain_override,omitempty"`
+	DomainOverride   []KnownProtocols `protobuf:"varint,7,rep,packed,name=domain_override,json=domainOverride,proto3,enum=accelerator.core.app.proxyman.KnownProtocols" json:"domain_override,omitempty"`
 	SniffingSettings *SniffingConfig  `protobuf:"bytes,8,opt,name=sniffing_settings,json=sniffingSettings,proto3" json:"sniffing_settings,omitempty"`
 }
 
@@ -553,7 +553,7 @@ type SenderConfig struct {
 	StreamSettings    *internet.StreamConfig      `protobuf:"bytes,2,opt,name=stream_settings,json=streamSettings,proto3" json:"stream_settings,omitempty"`
 	ProxySettings     *internet.ProxyConfig       `protobuf:"bytes,3,opt,name=proxy_settings,json=proxySettings,proto3" json:"proxy_settings,omitempty"`
 	MultiplexSettings *MultiplexingConfig         `protobuf:"bytes,4,opt,name=multiplex_settings,json=multiplexSettings,proto3" json:"multiplex_settings,omitempty"`
-	DomainStrategy    SenderConfig_DomainStrategy `protobuf:"varint,5,opt,name=domain_strategy,json=domainStrategy,proto3,enum=v2ray.core.app.proxyman.SenderConfig_DomainStrategy" json:"domain_strategy,omitempty"`
+	DomainStrategy    SenderConfig_DomainStrategy `protobuf:"varint,5,opt,name=domain_strategy,json=domainStrategy,proto3,enum=accelerator.core.app.proxyman.SenderConfig_DomainStrategy" json:"domain_strategy,omitempty"`
 }
 
 func (x *SenderConfig) Reset() {
@@ -935,42 +935,42 @@ func file_app_proxyman_config_proto_rawDescGZIP() []byte {
 var file_app_proxyman_config_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_app_proxyman_config_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_app_proxyman_config_proto_goTypes = []interface{}{
-	(KnownProtocols)(0),                                      // 0: v2ray.core.app.proxyman.KnownProtocols
-	(AllocationStrategy_Type)(0),                             // 1: v2ray.core.app.proxyman.AllocationStrategy.Type
-	(SenderConfig_DomainStrategy)(0),                         // 2: v2ray.core.app.proxyman.SenderConfig.DomainStrategy
-	(*InboundConfig)(nil),                                    // 3: v2ray.core.app.proxyman.InboundConfig
-	(*AllocationStrategy)(nil),                               // 4: v2ray.core.app.proxyman.AllocationStrategy
-	(*SniffingConfig)(nil),                                   // 5: v2ray.core.app.proxyman.SniffingConfig
-	(*ReceiverConfig)(nil),                                   // 6: v2ray.core.app.proxyman.ReceiverConfig
-	(*InboundHandlerConfig)(nil),                             // 7: v2ray.core.app.proxyman.InboundHandlerConfig
-	(*OutboundConfig)(nil),                                   // 8: v2ray.core.app.proxyman.OutboundConfig
-	(*SenderConfig)(nil),                                     // 9: v2ray.core.app.proxyman.SenderConfig
-	(*MultiplexingConfig)(nil),                               // 10: v2ray.core.app.proxyman.MultiplexingConfig
-	(*AllocationStrategy_AllocationStrategyConcurrency)(nil), // 11: v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency
-	(*AllocationStrategy_AllocationStrategyRefresh)(nil),     // 12: v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh
-	(*net.PortRange)(nil),                                    // 13: v2ray.core.common.net.PortRange
-	(*net.IPOrDomain)(nil),                                   // 14: v2ray.core.common.net.IPOrDomain
-	(*internet.StreamConfig)(nil),                            // 15: v2ray.core.transport.internet.StreamConfig
+	(KnownProtocols)(0),                                      // 0: accelerator.core.app.proxyman.KnownProtocols
+	(AllocationStrategy_Type)(0),                             // 1: accelerator.core.app.proxyman.AllocationStrategy.Type
+	(SenderConfig_DomainStrategy)(0),                         // 2: accelerator.core.app.proxyman.SenderConfig.DomainStrategy
+	(*InboundConfig)(nil),                                    // 3: accelerator.core.app.proxyman.InboundConfig
+	(*AllocationStrategy)(nil),                               // 4: accelerator.core.app.proxyman.AllocationStrategy
+	(*SniffingConfig)(nil),                                   // 5: accelerator.core.app.proxyman.SniffingConfig
+	(*ReceiverConfig)(nil),                                   // 6: accelerator.core.app.proxyman.ReceiverConfig
+	(*InboundHandlerConfig)(nil),                             // 7: accelerator.core.app.proxyman.InboundHandlerConfig
+	(*OutboundConfig)(nil),                                   // 8: accelerator.core.app.proxyman.OutboundConfig
+	(*SenderConfig)(nil),                                     // 9: accelerator.core.app.proxyman.SenderConfig
+	(*MultiplexingConfig)(nil),                               // 10: accelerator.core.app.proxyman.MultiplexingConfig
+	(*AllocationStrategy_AllocationStrategyConcurrency)(nil), // 11: accelerator.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency
+	(*AllocationStrategy_AllocationStrategyRefresh)(nil),     // 12: accelerator.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh
+	(*net.PortRange)(nil),                                    // 13: accelerator.core.common.net.PortRange
+	(*net.IPOrDomain)(nil),                                   // 14: accelerator.core.common.net.IPOrDomain
+	(*internet.StreamConfig)(nil),                            // 15: accelerator.core.transport.internet.StreamConfig
 	(*anypb.Any)(nil),                                        // 16: google.protobuf.Any
-	(*internet.ProxyConfig)(nil),                             // 17: v2ray.core.transport.internet.ProxyConfig
+	(*internet.ProxyConfig)(nil),                             // 17: accelerator.core.transport.internet.ProxyConfig
 }
 var file_app_proxyman_config_proto_depIdxs = []int32{
-	1,  // 0: v2ray.core.app.proxyman.AllocationStrategy.type:type_name -> v2ray.core.app.proxyman.AllocationStrategy.Type
-	11, // 1: v2ray.core.app.proxyman.AllocationStrategy.concurrency:type_name -> v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency
-	12, // 2: v2ray.core.app.proxyman.AllocationStrategy.refresh:type_name -> v2ray.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh
-	13, // 3: v2ray.core.app.proxyman.ReceiverConfig.port_range:type_name -> v2ray.core.common.net.PortRange
-	14, // 4: v2ray.core.app.proxyman.ReceiverConfig.listen:type_name -> v2ray.core.common.net.IPOrDomain
-	4,  // 5: v2ray.core.app.proxyman.ReceiverConfig.allocation_strategy:type_name -> v2ray.core.app.proxyman.AllocationStrategy
-	15, // 6: v2ray.core.app.proxyman.ReceiverConfig.stream_settings:type_name -> v2ray.core.transport.internet.StreamConfig
-	0,  // 7: v2ray.core.app.proxyman.ReceiverConfig.domain_override:type_name -> v2ray.core.app.proxyman.KnownProtocols
-	5,  // 8: v2ray.core.app.proxyman.ReceiverConfig.sniffing_settings:type_name -> v2ray.core.app.proxyman.SniffingConfig
-	16, // 9: v2ray.core.app.proxyman.InboundHandlerConfig.receiver_settings:type_name -> google.protobuf.Any
-	16, // 10: v2ray.core.app.proxyman.InboundHandlerConfig.proxy_settings:type_name -> google.protobuf.Any
-	14, // 11: v2ray.core.app.proxyman.SenderConfig.via:type_name -> v2ray.core.common.net.IPOrDomain
-	15, // 12: v2ray.core.app.proxyman.SenderConfig.stream_settings:type_name -> v2ray.core.transport.internet.StreamConfig
-	17, // 13: v2ray.core.app.proxyman.SenderConfig.proxy_settings:type_name -> v2ray.core.transport.internet.ProxyConfig
-	10, // 14: v2ray.core.app.proxyman.SenderConfig.multiplex_settings:type_name -> v2ray.core.app.proxyman.MultiplexingConfig
-	2,  // 15: v2ray.core.app.proxyman.SenderConfig.domain_strategy:type_name -> v2ray.core.app.proxyman.SenderConfig.DomainStrategy
+	1,  // 0: accelerator.core.app.proxyman.AllocationStrategy.type:type_name -> accelerator.core.app.proxyman.AllocationStrategy.Type
+	11, // 1: accelerator.core.app.proxyman.AllocationStrategy.concurrency:type_name -> accelerator.core.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency
+	12, // 2: accelerator.core.app.proxyman.AllocationStrategy.refresh:type_name -> accelerator.core.app.proxyman.AllocationStrategy.AllocationStrategyRefresh
+	13, // 3: accelerator.core.app.proxyman.ReceiverConfig.port_range:type_name -> accelerator.core.common.net.PortRange
+	14, // 4: accelerator.core.app.proxyman.ReceiverConfig.listen:type_name -> accelerator.core.common.net.IPOrDomain
+	4,  // 5: accelerator.core.app.proxyman.ReceiverConfig.allocation_strategy:type_name -> accelerator.core.app.proxyman.AllocationStrategy
+	15, // 6: accelerator.core.app.proxyman.ReceiverConfig.stream_settings:type_name -> accelerator.core.transport.internet.StreamConfig
+	0,  // 7: accelerator.core.app.proxyman.ReceiverConfig.domain_override:type_name -> accelerator.core.app.proxyman.KnownProtocols
+	5,  // 8: accelerator.core.app.proxyman.ReceiverConfig.sniffing_settings:type_name -> accelerator.core.app.proxyman.SniffingConfig
+	16, // 9: accelerator.core.app.proxyman.InboundHandlerConfig.receiver_settings:type_name -> google.protobuf.Any
+	16, // 10: accelerator.core.app.proxyman.InboundHandlerConfig.proxy_settings:type_name -> google.protobuf.Any
+	14, // 11: accelerator.core.app.proxyman.SenderConfig.via:type_name -> accelerator.core.common.net.IPOrDomain
+	15, // 12: accelerator.core.app.proxyman.SenderConfig.stream_settings:type_name -> accelerator.core.transport.internet.StreamConfig
+	17, // 13: accelerator.core.app.proxyman.SenderConfig.proxy_settings:type_name -> accelerator.core.transport.internet.ProxyConfig
+	10, // 14: accelerator.core.app.proxyman.SenderConfig.multiplex_settings:type_name -> accelerator.core.app.proxyman.MultiplexingConfig
+	2,  // 15: accelerator.core.app.proxyman.SenderConfig.domain_strategy:type_name -> accelerator.core.app.proxyman.SenderConfig.DomainStrategy
 	16, // [16:16] is the sub-list for method output_type
 	16, // [16:16] is the sub-list for method input_type
 	16, // [16:16] is the sub-list for extension type_name

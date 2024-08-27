@@ -18,25 +18,25 @@ cleanup() { rm -rf "$TMP"; }
 trap cleanup INT TERM ERR
 
 get_source() {
-	echo ">>> Clone v2fly/v2ray-core repo..."
-	git clone https://github.com/v2fly/v2ray-core.git
-	cd v2ray-core
+	echo ">>> Clone vdonkey/accelerator repo..."
+	git clone https://github.com/vdonkey/accelerator.git
+	cd accelerator
 	go mod download
 }
 
 build_v2() {
 	if [[ $nosource != 1 ]]; then
-		cd ${SRCDIR}/v2ray-core
+		cd ${SRCDIR}/accelerator
 		local VERSIONTAG=$(git describe --abbrev=0 --tags)
 	else
 		echo ">>> Use current directory as WORKDIR"
 		local VERSIONTAG=$(git describe --abbrev=0 --tags)
 	fi
 
-	LDFLAGS="-s -w -buildid= -X github.com/v2fly/v2ray-core/v5.codename=${CODENAME} -X github.com/v2fly/v2ray-core/v5.build=${BUILDNAME} -X github.com/v2fly/v2ray-core/v5.version=${VERSIONTAG}"
+	LDFLAGS="-s -w -buildid= -X github.com/vdonkey/accelerator/v5.codename=${CODENAME} -X github.com/vdonkey/accelerator/v5.build=${BUILDNAME} -X github.com/vdonkey/accelerator/v5.version=${VERSIONTAG}"
 
-	echo ">>> Compile v2ray ..."
-	env CGO_ENABLED=0 go build -o "$TMP"/v2ray"${EXESUFFIX}" -ldflags "$LDFLAGS" ./main
+	echo ">>> Compile accelerator ..."
+	env CGO_ENABLED=0 go build -o "$TMP"/accelerator"${EXESUFFIX}" -ldflags "$LDFLAGS" ./main
 }
 
 build_dat() {
@@ -63,7 +63,7 @@ copyconf() {
 packzip() {
 	echo ">>> Generating zip package"
 	cd "$TMP"
-	local PKG=${SRCDIR}/v2ray-custom-${GOARCH}-${GOOS}-${PKGSUFFIX}${NOW}.zip
+	local PKG=${SRCDIR}/accelerator-custom-${GOARCH}-${GOOS}-${PKGSUFFIX}${NOW}.zip
 	zip -r "$PKG" .
 	echo ">>> Generated: $(basename "$PKG") at $(dirname "$PKG")"
 }
@@ -71,7 +71,7 @@ packzip() {
 packtgz() {
 	echo ">>> Generating tgz package"
 	cd "$TMP"
-	local PKG=${SRCDIR}/v2ray-custom-${GOARCH}-${GOOS}-${PKGSUFFIX}${NOW}.tar.gz
+	local PKG=${SRCDIR}/accelerator-custom-${GOARCH}-${GOOS}-${PKGSUFFIX}${NOW}.tar.gz
 	tar cvfz "$PKG" .
 	echo ">>> Generated: $(basename "$PKG") at $(dirname "$PKG")"
 }

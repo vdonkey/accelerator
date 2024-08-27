@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package v2ray.core.app.subscription;
+package accelerator.core.app.subscription;
 
-option csharp_namespace = "V2Ray.Core.App.Subscription";
-option go_package = "github.com/v2fly/v2ray-core/v5/app/subscription";
-option java_package = "com.v2ray.core.app.subscription";
+option csharp_namespace = "Vdonkey.Core.App.Subscription";
+option go_package = "github.com/vdonkey/accelerator/v5/app/subscription";
+option java_package = "com.accelerator.core.app.subscription";
 option java_multiple_files = true;
 
 import "common/protoext/extensions.proto";
@@ -21,11 +21,11 @@ message ImportSource {
 
 // Config is the settings for Subscription Manager.
 message Config {
-  option (v2ray.core.common.protoext.message_opt).type = "service";
-  option (v2ray.core.common.protoext.message_opt).short_name = "subscription";
+  option (accelerator.core.common.protoext.message_opt).type = "service";
+  option (accelerator.core.common.protoext.message_opt).short_name = "subscription";
 
   repeated ImportSource imports = 1;
 
   bytes nonnative_converter_overlay = 2;
-  string nonnative_converter_overlay_file = 96002 [(v2ray.core.common.protoext.field_opt).convert_time_read_file_into = "nonnative_converter_overlay"];
+  string nonnative_converter_overlay_file = 96002 [(accelerator.core.common.protoext.field_opt).convert_time_read_file_into = "nonnative_converter_overlay"];
 }

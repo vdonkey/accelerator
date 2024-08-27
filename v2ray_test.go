@@ -6,24 +6,24 @@ import (
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 
-	. "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/app/dispatcher"
-	"github.com/v2fly/v2ray-core/v5/app/proxyman"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/common/uuid"
-	"github.com/v2fly/v2ray-core/v5/features/dns"
-	"github.com/v2fly/v2ray-core/v5/features/dns/localdns"
-	_ "github.com/v2fly/v2ray-core/v5/main/distro/all"
-	"github.com/v2fly/v2ray-core/v5/proxy/dokodemo"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess/outbound"
-	"github.com/v2fly/v2ray-core/v5/testing/servers/tcp"
+	. "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/app/dispatcher"
+	"github.com/vdonkey/accelerator/v5/app/proxyman"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/common/uuid"
+	"github.com/vdonkey/accelerator/v5/features/dns"
+	"github.com/vdonkey/accelerator/v5/features/dns/localdns"
+	_ "github.com/vdonkey/accelerator/v5/main/distro/all"
+	"github.com/vdonkey/accelerator/v5/proxy/dokodemo"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess/outbound"
+	"github.com/vdonkey/accelerator/v5/testing/servers/tcp"
 )
 
-func TestV2RayDependency(t *testing.T) {
+func TestAcceleratorDependency(t *testing.T) {
 	instance := new(Instance)
 
 	wait := make(chan bool, 1)
@@ -37,7 +37,7 @@ func TestV2RayDependency(t *testing.T) {
 	<-wait
 }
 
-func TestV2RayClose(t *testing.T) {
+func TestAcceleratorClose(t *testing.T) {
 	port := tcp.PickPort()
 
 	userID := uuid.New()

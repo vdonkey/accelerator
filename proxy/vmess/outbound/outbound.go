@@ -1,6 +1,6 @@
 package outbound
 
-//go:generate go run github.com/v2fly/v2ray-core/v5/common/errors/errorgen
+//go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen
 
 import (
 	"context"
@@ -8,23 +8,23 @@ import (
 	"crypto/sha256"
 	"hash/crc64"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/buf"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/platform"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/retry"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/common/session"
-	"github.com/v2fly/v2ray-core/v5/common/signal"
-	"github.com/v2fly/v2ray-core/v5/common/task"
-	"github.com/v2fly/v2ray-core/v5/features/policy"
-	"github.com/v2fly/v2ray-core/v5/proxy"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess/encoding"
-	"github.com/v2fly/v2ray-core/v5/transport"
-	"github.com/v2fly/v2ray-core/v5/transport/internet"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/buf"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/platform"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/retry"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/common/session"
+	"github.com/vdonkey/accelerator/v5/common/signal"
+	"github.com/vdonkey/accelerator/v5/common/task"
+	"github.com/vdonkey/accelerator/v5/features/policy"
+	"github.com/vdonkey/accelerator/v5/proxy"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess/encoding"
+	"github.com/vdonkey/accelerator/v5/transport"
+	"github.com/vdonkey/accelerator/v5/transport/internet"
 )
 
 // Handler is an outbound connection handler for VMess protocol.
@@ -232,12 +232,12 @@ func init() {
 
 	const defaultFlagValue = "NOT_DEFINED_AT_ALL"
 
-	paddingValue := platform.NewEnvFlag("v2ray.vmess.padding").GetValue(func() string { return defaultFlagValue })
+	paddingValue := platform.NewEnvFlag("accelerator.vmess.padding").GetValue(func() string { return defaultFlagValue })
 	if paddingValue != defaultFlagValue {
 		enablePadding = true
 	}
 
-	isAeadDisabled := platform.NewEnvFlag("v2ray.vmess.aead.disabled").GetValue(func() string { return defaultFlagValue })
+	isAeadDisabled := platform.NewEnvFlag("accelerator.vmess.aead.disabled").GetValue(func() string { return defaultFlagValue })
 	if isAeadDisabled == "true" {
 		aeadDisabled = true
 	}

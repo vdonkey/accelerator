@@ -6,13 +6,13 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/buf"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/uuid"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess"
-	. "github.com/v2fly/v2ray-core/v5/proxy/vmess/encoding"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/buf"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/uuid"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess"
+	. "github.com/vdonkey/accelerator/v5/proxy/vmess/encoding"
 )
 
 func toAccount(a *vmess.Account) protocol.Account {

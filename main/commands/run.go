@@ -10,32 +10,32 @@ import (
 	"strings"
 	"syscall"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/common/cmdarg"
-	"github.com/v2fly/v2ray-core/v5/common/platform"
-	"github.com/v2fly/v2ray-core/v5/main/commands/base"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/common/cmdarg"
+	"github.com/vdonkey/accelerator/v5/common/platform"
+	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
-// CmdRun runs V2Ray with config
+// CmdRun runs Vdonkey with config
 var CmdRun = &base.Command{
 	CustomFlags: true,
 	UsageLine:   "{{.Exec}} run [-c config.json] [-d dir]",
-	Short:       "run V2Ray with config",
+	Short:       "run Vdonkey with config",
 	Long: `
-Run V2Ray with config.
+Run Vdonkey with config.
 
 {{.Exec}} will also use the config directory specified by environment 
-variable "v2ray.location.confdir". If no config found, it tries 
+variable "accelerator.location.confdir". If no config found, it tries 
 to load config from one of below:
 
 	1. The default "config.json" in the current directory
-	2. The config file from ENV "v2ray.location.config"
+	2. The config file from ENV "accelerator.location.config"
 	3. The stdin if all failed above
 
 Arguments:
 
 	-c, -config <file>
-		Config file for V2Ray. Multiple assign is accepted.
+		Config file for Vdonkey. Multiple assign is accepted.
 
 	-d, -confdir <dir>
 		A directory with config files. Multiple assign is accepted.
@@ -78,7 +78,7 @@ func executeRun(cmd *base.Command, args []string) {
 	cmd.Flag.Parse(args)
 	printVersion()
 	configFiles = getConfigFilePath()
-	server, err := startV2Ray()
+	server, err := startAccelerator()
 	if err != nil {
 		base.Fatalf("Failed to start: %s", err)
 	}
@@ -190,7 +190,7 @@ func getConfigFilePath() cmdarg.Arg {
 	return nil
 }
 
-func startV2Ray() (core.Server, error) {
+func startAccelerator() (core.Server, error) {
 	config, err := core.LoadConfig(*configFormat, configFiles)
 	if err != nil {
 		if len(configFiles) == 0 {

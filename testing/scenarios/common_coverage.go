@@ -8,23 +8,23 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/v2fly/v2ray-core/v5/common/uuid"
+	"github.com/vdonkey/accelerator/v5/common/uuid"
 )
 
-func BuildV2Ray() error {
+func BuildAccelerator() error {
 	genTestBinaryPath()
 	if _, err := os.Stat(testBinaryPath); err == nil {
 		return nil
 	}
 
-	cmd := exec.Command("go", "test", "-tags", "coverage coveragemain", "-coverpkg", "github.com/v2fly/v2ray-core/v5/...", "-c", "-o", testBinaryPath, GetSourcePath())
+	cmd := exec.Command("go", "test", "-tags", "coverage coveragemain", "-coverpkg", "github.com/vdonkey/accelerator/v5/...", "-c", "-o", testBinaryPath, GetSourcePath())
 	return cmd.Run()
 }
 
-func RunV2RayProtobuf(config []byte) *exec.Cmd {
+func RunAcceleratorProtobuf(config []byte) *exec.Cmd {
 	genTestBinaryPath()
 
-	covDir := os.Getenv("V2RAY_COV")
+	covDir := os.Getenv("ACCELERATOR_COV")
 	os.MkdirAll(covDir, os.ModeDir)
 	randomID := uuid.New()
 	profile := randomID.String() + ".out"

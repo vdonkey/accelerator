@@ -5,15 +5,15 @@ about: "Create a bug report to help us improve"
 
 <!--
 Please answer all the questions with enough information. All issues not following this template will be closed immediately.
-If you are not sure if your question is truely a bug of V2Ray, please discuss it at https://github.com/v2fly/v2ray-core/discussions first.
+If you are not sure if your question is truely a bug of Vdonkey, please discuss it at https://github.com/vdonkey/accelerator/discussions first.
 -->
 
-## What version of V2Ray are you using?
+## What version of Vdonkey are you using?
 
-<!-- If you deploy different versions of V2Ray on server and client, please explicitly point out -->
+<!-- If you deploy different versions of Vdonkey on server and client, please explicitly point out -->
 
 
-## What's your scenario of using V2Ray?
+## What's your scenario of using Vdonkey?
 
 <!-- E.g., watching YouTube videos in browsers via Socks/VMess proxy -->
 
@@ -49,7 +49,7 @@ If you are not sure if your question is truely a bug of V2Ray, please discuss it
 
 <!--
 only trailing lines if the log file is large in size.
-Error log file is usually at `/var/log/v2ray/error.log` on Linux.
+Error log file is usually at `/var/log/accelerator/error.log` on Linux.
 -->
 
 **Server error log:**
@@ -68,7 +68,7 @@ Error log file is usually at `/var/log/v2ray/error.log` on Linux.
 
 ## Please attach access log here
 
-<!-- Access log is usually at '/var/log/v2ray/access.log' on Linux. -->
+<!-- Access log is usually at '/var/log/accelerator/access.log' on Linux. -->
 
 ```javascript
 // Please attach your server access log here.
@@ -79,12 +79,12 @@ Error log file is usually at `/var/log/v2ray/error.log` on Linux.
 
 
 
-## If V2Ray cannot start up, please attach output from `--test` command
+## If Vdonkey cannot start up, please attach output from `--test` command
 
 
 
-## If V2Ray service is abnormal, please attach journal log here
+## If Vdonkey service is abnormal, please attach journal log here
 
-<!-- Usual command is `journalctl -u v2ray` -->
+<!-- Usual command is `journalctl -u accelerator` -->
 
 <!-- Please review your issue and check the format before submitting. -->

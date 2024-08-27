@@ -1,8 +1,8 @@
 package utls
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
-	tls "github.com/v2fly/v2ray-core/v5/transport/internet/tls"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
+	tls "github.com/vdonkey/accelerator/v5/transport/internet/tls"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -73,7 +73,7 @@ type Config struct {
 	TlsConfig *tls.Config `protobuf:"bytes,1,opt,name=tls_config,json=tlsConfig,proto3" json:"tls_config,omitempty"`
 	Imitate   string      `protobuf:"bytes,2,opt,name=imitate,proto3" json:"imitate,omitempty"`
 	NoSNI     bool        `protobuf:"varint,3,opt,name=noSNI,proto3" json:"noSNI,omitempty"`
-	ForceAlpn ForcedALPN  `protobuf:"varint,4,opt,name=force_alpn,json=forceAlpn,proto3,enum=v2ray.core.transport.internet.tls.utls.ForcedALPN" json:"force_alpn,omitempty"`
+	ForceAlpn ForcedALPN  `protobuf:"varint,4,opt,name=force_alpn,json=forceAlpn,proto3,enum=accelerator.core.transport.internet.tls.utls.ForcedALPN" json:"force_alpn,omitempty"`
 }
 
 func (x *Config) Reset() {
@@ -196,13 +196,13 @@ func file_transport_internet_tls_utls_config_proto_rawDescGZIP() []byte {
 var file_transport_internet_tls_utls_config_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_transport_internet_tls_utls_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_transport_internet_tls_utls_config_proto_goTypes = []interface{}{
-	(ForcedALPN)(0),    // 0: v2ray.core.transport.internet.tls.utls.ForcedALPN
-	(*Config)(nil),     // 1: v2ray.core.transport.internet.tls.utls.Config
-	(*tls.Config)(nil), // 2: v2ray.core.transport.internet.tls.Config
+	(ForcedALPN)(0),    // 0: accelerator.core.transport.internet.tls.utls.ForcedALPN
+	(*Config)(nil),     // 1: accelerator.core.transport.internet.tls.utls.Config
+	(*tls.Config)(nil), // 2: accelerator.core.transport.internet.tls.Config
 }
 var file_transport_internet_tls_utls_config_proto_depIdxs = []int32{
-	2, // 0: v2ray.core.transport.internet.tls.utls.Config.tls_config:type_name -> v2ray.core.transport.internet.tls.Config
-	0, // 1: v2ray.core.transport.internet.tls.utls.Config.force_alpn:type_name -> v2ray.core.transport.internet.tls.utls.ForcedALPN
+	2, // 0: accelerator.core.transport.internet.tls.utls.Config.tls_config:type_name -> accelerator.core.transport.internet.tls.Config
+	0, // 1: accelerator.core.transport.internet.tls.utls.Config.force_alpn:type_name -> accelerator.core.transport.internet.tls.utls.ForcedALPN
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

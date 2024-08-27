@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/protocol/tls/cert"
-	"github.com/v2fly/v2ray-core/v5/common/task"
-	"github.com/v2fly/v2ray-core/v5/main/commands/base"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/protocol/tls/cert"
+	"github.com/vdonkey/accelerator/v5/common/task"
+	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
 // cmdCert is the tls cert command
@@ -57,8 +57,8 @@ var (
 		return true
 	}()
 
-	certCommonName   = cmdCert.Flag.String("name", "V2Ray Inc", "")
-	certOrganization = cmdCert.Flag.String("org", "V2Ray Inc", "")
+	certCommonName   = cmdCert.Flag.String("name", "Vdonkey Inc", "")
+	certOrganization = cmdCert.Flag.String("org", "Vdonkey Inc", "")
 	certIsCA         = cmdCert.Flag.Bool("ca", false, "")
 	certJSONOutput   = cmdCert.Flag.Bool("json", true, "")
 	certFileOutput   = cmdCert.Flag.String("file", "", "")

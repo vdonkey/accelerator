@@ -1,10 +1,10 @@
 package simplified
 
 import (
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	packetaddr "github.com/v2fly/v2ray-core/v5/common/net/packetaddr"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
-	shadowsocks "github.com/v2fly/v2ray-core/v5/proxy/shadowsocks"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	packetaddr "github.com/vdonkey/accelerator/v5/common/net/packetaddr"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
+	shadowsocks "github.com/vdonkey/accelerator/v5/proxy/shadowsocks"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,7 +26,7 @@ type ServerConfig struct {
 	Method         *CipherTypeWrapper        `protobuf:"bytes,1,opt,name=method,proto3" json:"method,omitempty"`
 	Password       string                    `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	Networks       *net.NetworkList          `protobuf:"bytes,3,opt,name=networks,proto3" json:"networks,omitempty"`
-	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=v2ray.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
+	PacketEncoding packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=accelerator.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
 }
 
 func (x *ServerConfig) Reset() {
@@ -173,7 +173,7 @@ type CipherTypeWrapper struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Value shadowsocks.CipherType `protobuf:"varint,1,opt,name=value,proto3,enum=v2ray.core.proxy.shadowsocks.CipherType" json:"value,omitempty"`
+	Value shadowsocks.CipherType `protobuf:"varint,1,opt,name=value,proto3,enum=accelerator.core.proxy.shadowsocks.CipherType" json:"value,omitempty"`
 }
 
 func (x *CipherTypeWrapper) Reset() {
@@ -304,21 +304,21 @@ func file_proxy_shadowsocks_simplified_config_proto_rawDescGZIP() []byte {
 
 var file_proxy_shadowsocks_simplified_config_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_proxy_shadowsocks_simplified_config_proto_goTypes = []interface{}{
-	(*ServerConfig)(nil),           // 0: v2ray.core.proxy.shadowsocks.simplified.ServerConfig
-	(*ClientConfig)(nil),           // 1: v2ray.core.proxy.shadowsocks.simplified.ClientConfig
-	(*CipherTypeWrapper)(nil),      // 2: v2ray.core.proxy.shadowsocks.simplified.CipherTypeWrapper
-	(*net.NetworkList)(nil),        // 3: v2ray.core.common.net.NetworkList
-	(packetaddr.PacketAddrType)(0), // 4: v2ray.core.net.packetaddr.PacketAddrType
-	(*net.IPOrDomain)(nil),         // 5: v2ray.core.common.net.IPOrDomain
-	(shadowsocks.CipherType)(0),    // 6: v2ray.core.proxy.shadowsocks.CipherType
+	(*ServerConfig)(nil),           // 0: accelerator.core.proxy.shadowsocks.simplified.ServerConfig
+	(*ClientConfig)(nil),           // 1: accelerator.core.proxy.shadowsocks.simplified.ClientConfig
+	(*CipherTypeWrapper)(nil),      // 2: accelerator.core.proxy.shadowsocks.simplified.CipherTypeWrapper
+	(*net.NetworkList)(nil),        // 3: accelerator.core.common.net.NetworkList
+	(packetaddr.PacketAddrType)(0), // 4: accelerator.core.net.packetaddr.PacketAddrType
+	(*net.IPOrDomain)(nil),         // 5: accelerator.core.common.net.IPOrDomain
+	(shadowsocks.CipherType)(0),    // 6: accelerator.core.proxy.shadowsocks.CipherType
 }
 var file_proxy_shadowsocks_simplified_config_proto_depIdxs = []int32{
-	2, // 0: v2ray.core.proxy.shadowsocks.simplified.ServerConfig.method:type_name -> v2ray.core.proxy.shadowsocks.simplified.CipherTypeWrapper
-	3, // 1: v2ray.core.proxy.shadowsocks.simplified.ServerConfig.networks:type_name -> v2ray.core.common.net.NetworkList
-	4, // 2: v2ray.core.proxy.shadowsocks.simplified.ServerConfig.packet_encoding:type_name -> v2ray.core.net.packetaddr.PacketAddrType
-	5, // 3: v2ray.core.proxy.shadowsocks.simplified.ClientConfig.address:type_name -> v2ray.core.common.net.IPOrDomain
-	2, // 4: v2ray.core.proxy.shadowsocks.simplified.ClientConfig.method:type_name -> v2ray.core.proxy.shadowsocks.simplified.CipherTypeWrapper
-	6, // 5: v2ray.core.proxy.shadowsocks.simplified.CipherTypeWrapper.value:type_name -> v2ray.core.proxy.shadowsocks.CipherType
+	2, // 0: accelerator.core.proxy.shadowsocks.simplified.ServerConfig.method:type_name -> accelerator.core.proxy.shadowsocks.simplified.CipherTypeWrapper
+	3, // 1: accelerator.core.proxy.shadowsocks.simplified.ServerConfig.networks:type_name -> accelerator.core.common.net.NetworkList
+	4, // 2: accelerator.core.proxy.shadowsocks.simplified.ServerConfig.packet_encoding:type_name -> accelerator.core.net.packetaddr.PacketAddrType
+	5, // 3: accelerator.core.proxy.shadowsocks.simplified.ClientConfig.address:type_name -> accelerator.core.common.net.IPOrDomain
+	2, // 4: accelerator.core.proxy.shadowsocks.simplified.ClientConfig.method:type_name -> accelerator.core.proxy.shadowsocks.simplified.CipherTypeWrapper
+	6, // 5: accelerator.core.proxy.shadowsocks.simplified.CipherTypeWrapper.value:type_name -> accelerator.core.proxy.shadowsocks.CipherType
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name

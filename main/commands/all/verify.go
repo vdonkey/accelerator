@@ -5,7 +5,7 @@ import (
 
 	"github.com/v2fly/VSign/signerVerify"
 
-	"github.com/v2fly/v2ray-core/v5/main/commands/base"
+	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
 var cmdVerify = &base.Command{
@@ -46,6 +46,6 @@ func executeVerify(cmd *base.Command, args []string) {
 
 	err = signerVerify.OutputAndJudge(signerVerify.CheckSignaturesV2Fly(sigReader, files))
 	if err != nil {
-		base.Fatalf("file is not officially signed by V2Ray: %s", err)
+		base.Fatalf("file is not officially signed by Vdonkey: %s", err)
 	}
 }

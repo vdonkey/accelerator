@@ -15,15 +15,15 @@ import (
 
 	"golang.org/x/net/dns/dnsmessage"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/protocol/dns"
-	"github.com/v2fly/v2ray-core/v5/common/session"
-	"github.com/v2fly/v2ray-core/v5/common/signal/pubsub"
-	"github.com/v2fly/v2ray-core/v5/common/task"
-	dns_feature "github.com/v2fly/v2ray-core/v5/features/dns"
-	"github.com/v2fly/v2ray-core/v5/features/routing"
-	"github.com/v2fly/v2ray-core/v5/transport/internet"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/protocol/dns"
+	"github.com/vdonkey/accelerator/v5/common/session"
+	"github.com/vdonkey/accelerator/v5/common/signal/pubsub"
+	"github.com/vdonkey/accelerator/v5/common/task"
+	dns_feature "github.com/vdonkey/accelerator/v5/features/dns"
+	"github.com/vdonkey/accelerator/v5/features/routing"
+	"github.com/vdonkey/accelerator/v5/transport/internet"
 )
 
 // DoHNameServer implemented DNS over HTTPS (RFC8484) Wire Format,
@@ -48,8 +48,8 @@ func NewDoHNameServer(url *url.URL, dispatcher routing.Dispatcher) (*DoHNameServ
 	// This makes DOH inefficient without a keep-alived connection
 	// See: core/app/proxyman/outbound/handler.go:113
 	// Using mux (https request wrapped in a stream layer) improves the situation.
-	// Recommend to use NewDoHLocalNameServer (DOHL:) if v2ray instance is running on
-	//  a normal network eg. the server side of v2ray
+	// Recommend to use NewDoHLocalNameServer (DOHL:) if accelerator instance is running on
+	//  a normal network eg. the server side of accelerator
 	tr := &http.Transport{
 		MaxIdleConns:        30,
 		IdleConnTimeout:     90 * time.Second,

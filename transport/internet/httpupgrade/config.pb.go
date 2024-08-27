@@ -1,7 +1,7 @@
 package httpupgrade
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -113,7 +113,7 @@ func file_transport_internet_httpupgrade_config_proto_rawDescGZIP() []byte {
 
 var file_transport_internet_httpupgrade_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_transport_internet_httpupgrade_config_proto_goTypes = []interface{}{
-	(*Config)(nil), // 0: v2ray.core.transport.internet.request.httpupgrade.Config
+	(*Config)(nil), // 0: accelerator.core.transport.internet.request.httpupgrade.Config
 }
 var file_transport_internet_httpupgrade_config_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

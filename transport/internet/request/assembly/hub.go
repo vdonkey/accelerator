@@ -5,13 +5,13 @@ import (
 	gonet "net"
 	"time"
 
-	"github.com/v2fly/v2ray-core/v5/transport/internet/transportcommon"
+	"github.com/vdonkey/accelerator/v5/transport/internet/transportcommon"
 
-	"github.com/v2fly/v2ray-core/v5/common"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/transport/internet"
-	"github.com/v2fly/v2ray-core/v5/transport/internet/request"
+	"github.com/vdonkey/accelerator/v5/common"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/transport/internet"
+	"github.com/vdonkey/accelerator/v5/transport/internet/request"
 )
 
 type server struct {

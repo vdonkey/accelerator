@@ -1,7 +1,7 @@
 package tls
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -131,7 +131,7 @@ type Certificate struct {
 	Certificate []byte `protobuf:"bytes,1,opt,name=Certificate,proto3" json:"Certificate,omitempty"`
 	// TLS key in x509 format.
 	Key             []byte            `protobuf:"bytes,2,opt,name=Key,proto3" json:"Key,omitempty"`
-	Usage           Certificate_Usage `protobuf:"varint,3,opt,name=usage,proto3,enum=v2ray.core.transport.internet.tls.Certificate_Usage" json:"usage,omitempty"`
+	Usage           Certificate_Usage `protobuf:"varint,3,opt,name=usage,proto3,enum=accelerator.core.transport.internet.tls.Certificate_Usage" json:"usage,omitempty"`
 	CertificateFile string            `protobuf:"bytes,96001,opt,name=certificate_file,json=certificateFile,proto3" json:"certificate_file,omitempty"`
 	KeyFile         string            `protobuf:"bytes,96002,opt,name=key_file,json=keyFile,proto3" json:"key_file,omitempty"`
 }
@@ -229,9 +229,9 @@ type Config struct {
 	// If true, the client is required to present a certificate.
 	VerifyClientCertificate bool `protobuf:"varint,8,opt,name=verify_client_certificate,json=verifyClientCertificate,proto3" json:"verify_client_certificate,omitempty"`
 	// Minimum TLS version to support.
-	MinVersion Config_TLSVersion `protobuf:"varint,9,opt,name=min_version,json=minVersion,proto3,enum=v2ray.core.transport.internet.tls.Config_TLSVersion" json:"min_version,omitempty"`
+	MinVersion Config_TLSVersion `protobuf:"varint,9,opt,name=min_version,json=minVersion,proto3,enum=accelerator.core.transport.internet.tls.Config_TLSVersion" json:"min_version,omitempty"`
 	// Maximum TLS version to support.
-	MaxVersion Config_TLSVersion `protobuf:"varint,10,opt,name=max_version,json=maxVersion,proto3,enum=v2ray.core.transport.internet.tls.Config_TLSVersion" json:"max_version,omitempty"`
+	MaxVersion Config_TLSVersion `protobuf:"varint,10,opt,name=max_version,json=maxVersion,proto3,enum=accelerator.core.transport.internet.tls.Config_TLSVersion" json:"max_version,omitempty"`
 }
 
 func (x *Config) Reset() {
@@ -439,16 +439,16 @@ func file_transport_internet_tls_config_proto_rawDescGZIP() []byte {
 var file_transport_internet_tls_config_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_transport_internet_tls_config_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_transport_internet_tls_config_proto_goTypes = []interface{}{
-	(Certificate_Usage)(0), // 0: v2ray.core.transport.internet.tls.Certificate.Usage
-	(Config_TLSVersion)(0), // 1: v2ray.core.transport.internet.tls.Config.TLSVersion
-	(*Certificate)(nil),    // 2: v2ray.core.transport.internet.tls.Certificate
-	(*Config)(nil),         // 3: v2ray.core.transport.internet.tls.Config
+	(Certificate_Usage)(0), // 0: accelerator.core.transport.internet.tls.Certificate.Usage
+	(Config_TLSVersion)(0), // 1: accelerator.core.transport.internet.tls.Config.TLSVersion
+	(*Certificate)(nil),    // 2: accelerator.core.transport.internet.tls.Certificate
+	(*Config)(nil),         // 3: accelerator.core.transport.internet.tls.Config
 }
 var file_transport_internet_tls_config_proto_depIdxs = []int32{
-	0, // 0: v2ray.core.transport.internet.tls.Certificate.usage:type_name -> v2ray.core.transport.internet.tls.Certificate.Usage
-	2, // 1: v2ray.core.transport.internet.tls.Config.certificate:type_name -> v2ray.core.transport.internet.tls.Certificate
-	1, // 2: v2ray.core.transport.internet.tls.Config.min_version:type_name -> v2ray.core.transport.internet.tls.Config.TLSVersion
-	1, // 3: v2ray.core.transport.internet.tls.Config.max_version:type_name -> v2ray.core.transport.internet.tls.Config.TLSVersion
+	0, // 0: accelerator.core.transport.internet.tls.Certificate.usage:type_name -> accelerator.core.transport.internet.tls.Certificate.Usage
+	2, // 1: accelerator.core.transport.internet.tls.Config.certificate:type_name -> accelerator.core.transport.internet.tls.Certificate
+	1, // 2: accelerator.core.transport.internet.tls.Config.min_version:type_name -> accelerator.core.transport.internet.tls.Config.TLSVersion
+	1, // 3: accelerator.core.transport.internet.tls.Config.max_version:type_name -> accelerator.core.transport.internet.tls.Config.TLSVersion
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

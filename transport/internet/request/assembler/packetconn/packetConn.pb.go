@@ -1,7 +1,7 @@
 package packetconn
 
 import (
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"
@@ -276,13 +276,13 @@ func file_transport_internet_request_assembler_packetconn_packetConn_proto_rawDe
 
 var file_transport_internet_request_assembler_packetconn_packetConn_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_transport_internet_request_assembler_packetconn_packetConn_proto_goTypes = []any{
-	(*ClientConfig)(nil), // 0: v2ray.core.transport.internet.request.assembler.packetconn.ClientConfig
-	(*ServerConfig)(nil), // 1: v2ray.core.transport.internet.request.assembler.packetconn.ServerConfig
+	(*ClientConfig)(nil), // 0: accelerator.core.transport.internet.request.assembler.packetconn.ClientConfig
+	(*ServerConfig)(nil), // 1: accelerator.core.transport.internet.request.assembler.packetconn.ServerConfig
 	(*anypb.Any)(nil),    // 2: google.protobuf.Any
 }
 var file_transport_internet_request_assembler_packetconn_packetConn_proto_depIdxs = []int32{
-	2, // 0: v2ray.core.transport.internet.request.assembler.packetconn.ClientConfig.underlying_transport_setting:type_name -> google.protobuf.Any
-	2, // 1: v2ray.core.transport.internet.request.assembler.packetconn.ServerConfig.underlying_transport_setting:type_name -> google.protobuf.Any
+	2, // 0: accelerator.core.transport.internet.request.assembler.packetconn.ClientConfig.underlying_transport_setting:type_name -> google.protobuf.Any
+	2, // 1: accelerator.core.transport.internet.request.assembler.packetconn.ServerConfig.underlying_transport_setting:type_name -> google.protobuf.Any
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

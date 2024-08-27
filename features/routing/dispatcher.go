@@ -3,15 +3,15 @@ package routing
 import (
 	"context"
 
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/features"
-	"github.com/v2fly/v2ray-core/v5/transport"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/features"
+	"github.com/vdonkey/accelerator/v5/transport"
 )
 
 // Dispatcher is a feature that dispatches inbound requests to outbound handlers based on rules.
-// Dispatcher is required to be registered in a V2Ray instance to make V2Ray function properly.
+// Dispatcher is required to be registered in a Vdonkey instance to make Vdonkey function properly.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 type Dispatcher interface {
 	features.Feature
 
@@ -21,7 +21,7 @@ type Dispatcher interface {
 
 // DispatcherType returns the type of Dispatcher interface. Can be used to implement common.HasType.
 //
-// v2ray:api:stable
+// accelerator:api:stable
 func DispatcherType() interface{} {
 	return (*Dispatcher)(nil)
 }

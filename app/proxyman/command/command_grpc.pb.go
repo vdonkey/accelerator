@@ -13,12 +13,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	HandlerService_AddInbound_FullMethodName     = "/v2ray.core.app.proxyman.command.HandlerService/AddInbound"
-	HandlerService_RemoveInbound_FullMethodName  = "/v2ray.core.app.proxyman.command.HandlerService/RemoveInbound"
-	HandlerService_AlterInbound_FullMethodName   = "/v2ray.core.app.proxyman.command.HandlerService/AlterInbound"
-	HandlerService_AddOutbound_FullMethodName    = "/v2ray.core.app.proxyman.command.HandlerService/AddOutbound"
-	HandlerService_RemoveOutbound_FullMethodName = "/v2ray.core.app.proxyman.command.HandlerService/RemoveOutbound"
-	HandlerService_AlterOutbound_FullMethodName  = "/v2ray.core.app.proxyman.command.HandlerService/AlterOutbound"
+	HandlerService_AddInbound_FullMethodName     = "/accelerator.core.app.proxyman.command.HandlerService/AddInbound"
+	HandlerService_RemoveInbound_FullMethodName  = "/accelerator.core.app.proxyman.command.HandlerService/RemoveInbound"
+	HandlerService_AlterInbound_FullMethodName   = "/accelerator.core.app.proxyman.command.HandlerService/AlterInbound"
+	HandlerService_AddOutbound_FullMethodName    = "/accelerator.core.app.proxyman.command.HandlerService/AddOutbound"
+	HandlerService_RemoveOutbound_FullMethodName = "/accelerator.core.app.proxyman.command.HandlerService/RemoveOutbound"
+	HandlerService_AlterOutbound_FullMethodName  = "/accelerator.core.app.proxyman.command.HandlerService/AlterOutbound"
 )
 
 // HandlerServiceClient is the client API for HandlerService service.
@@ -255,7 +255,7 @@ func _HandlerService_AlterOutbound_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var HandlerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "v2ray.core.app.proxyman.command.HandlerService",
+	ServiceName: "accelerator.core.app.proxyman.command.HandlerService",
 	HandlerType: (*HandlerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

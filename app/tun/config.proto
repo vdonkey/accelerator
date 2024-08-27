@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package v2ray.core.app.tun;
-option csharp_namespace = "V2Ray.Core.App.Tun";
-option go_package = "github.com/v2fly/v2ray-core/v5/app/tun";
-option java_package = "com.v2ray.core.app.tun";
+package accelerator.core.app.tun;
+option csharp_namespace = "Vdonkey.Core.App.Tun";
+option go_package = "github.com/vdonkey/accelerator/v5/app/tun";
+option java_package = "com.accelerator.core.app.tun";
 option java_multiple_files = true;
 
 import "app/proxyman/config.proto";
@@ -13,18 +13,18 @@ import "common/net/packetaddr/config.proto";
 import "transport/internet/config.proto";
 
 message Config {
-  option (v2ray.core.common.protoext.message_opt).type = "service";
-  option (v2ray.core.common.protoext.message_opt).short_name = "tun";
+  option (accelerator.core.common.protoext.message_opt).type = "service";
+  option (accelerator.core.common.protoext.message_opt).short_name = "tun";
 
   string name = 1;
   uint32 mtu = 2;
   uint32 user_level = 3;
-  v2ray.core.net.packetaddr.PacketAddrType packet_encoding = 4;
+  accelerator.core.net.packetaddr.PacketAddrType packet_encoding = 4;
   string tag = 5;
-  repeated v2ray.core.app.router.routercommon.CIDR ips = 6;
-  repeated v2ray.core.app.router.routercommon.CIDR routes = 7;
+  repeated accelerator.core.app.router.routercommon.CIDR ips = 6;
+  repeated accelerator.core.app.router.routercommon.CIDR routes = 7;
   bool enable_promiscuous_mode = 8;
   bool enable_spoofing = 9;
-  v2ray.core.transport.internet.SocketConfig socket_settings = 10;
-  v2ray.core.app.proxyman.SniffingConfig sniffing_settings = 11;
+  accelerator.core.transport.internet.SocketConfig socket_settings = 10;
+  accelerator.core.app.proxyman.SniffingConfig sniffing_settings = 11;
 }

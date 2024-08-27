@@ -1,13 +1,13 @@
 package dns
 
 import (
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/features"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/features"
 )
 
-// FakeDNSEngine is a V2Ray feature for converting between domain and fake IPs.
+// FakeDNSEngine is a Vdonkey feature for converting between domain and fake IPs.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 type FakeDNSEngine interface {
 	features.Feature
 
@@ -20,7 +20,7 @@ type FakeDNSEngine interface {
 
 // FakeDNSEngineRev0 adds additional APIs for FakeDNSEngine.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 type FakeDNSEngineRev0 interface {
 	FakeDNSEngine
 
@@ -33,7 +33,7 @@ type FakeDNSEngineRev0 interface {
 
 // ClientWithFakeDNS is an optional feature for utilizing FakeDNS feature of DNS client.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 type ClientWithFakeDNS interface {
 	// AsFakeDNSClient converts the client to dns.Client that enables FakeDNS querying option.
 	AsFakeDNSClient() Client
@@ -44,7 +44,7 @@ type ClientWithFakeDNS interface {
 
 // FakeDNSEngineType returns the type of FakeDNSEngine interface. Can be used for implementing common.HasType.
 //
-// v2ray:api:beta
+// accelerator:api:beta
 func FakeDNSEngineType() interface{} {
 	return (*FakeDNSEngine)(nil)
 }

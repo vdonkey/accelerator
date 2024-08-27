@@ -128,7 +128,7 @@ jobs:
       - name: Get project dependencies
         run: go mod download
 
-      - name: Build V2Ray
+      - name: Build Vdonkey
         run: |
           mkdir -p build_assets
           EXTRA_ARG=""
@@ -141,13 +141,13 @@ jobs:
               EXTRA_ARG=EXTRA_ARG+"-buildmode=pie"
               ;;
           esac
-          go build -v -o build_assets/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
+          go build -v -o build_assets/accelerator -trimpath -ldflags "-s -w -buildid=" ./main
 
-      - name: Rename Windows V2Ray
+      - name: Rename Windows Vdonkey
         if: matrix.goos == 'windows'
         run: |
           cd ./build_assets || exit 1
-          mv v2ray v2ray.exe
+          mv accelerator accelerator.exe
 
       - name: Download geo files
         run: |
@@ -165,9 +165,9 @@ jobs:
       - name: Create ZIP archive
         run: |
           pushd build_assets || exit 1
-          zip -9vr ../v2ray-$ASSET_NAME.zip .
+          zip -9vr ../accelerator-$ASSET_NAME.zip .
           popd || exit 1
-          FILE=./v2ray-$ASSET_NAME.zip
+          FILE=./accelerator-$ASSET_NAME.zip
           DGST=$FILE.dgst
           openssl dgst -md5    $FILE | sed 's/([^)]*)//g' >>$DGST
           openssl dgst -sha1   $FILE | sed 's/([^)]*)//g' >>$DGST
@@ -177,8 +177,8 @@ jobs:
       - name: Upload ZIP file to Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: v2ray-${{ steps.get_filename.outputs.ASSET_NAME }}.zip
-          path: v2ray-${{ steps.get_filename.outputs.ASSET_NAME }}.zip
+          name: accelerator-${{ steps.get_filename.outputs.ASSET_NAME }}.zip
+          path: accelerator-${{ steps.get_filename.outputs.ASSET_NAME }}.zip
 
       - name: Upload files to GitHub release
         uses: svenstaro/upload-release-action@v2
@@ -186,7 +186,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
-          file: ./v2ray-${{ steps.get_filename.outputs.ASSET_NAME }}.zip*
+          file: ./accelerator-${{ steps.get_filename.outputs.ASSET_NAME }}.zip*
           tag: ${{ github.ref }}
           overwrite: true
 
@@ -211,7 +211,7 @@ jobs:
       - name: Create extra package
         run: |
           pushd ./release/extra/
-          zip -9vr ../../build_artifacts/v2ray-extra.zip .
+          zip -9vr ../../build_artifacts/accelerator-extra.zip .
           popd
 
       - name: Generate shasum
@@ -251,8 +251,8 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: v2ray-extra.zip
-          path: build_artifacts/v2ray-extra.zip
+          name: accelerator-extra.zip
+          path: build_artifacts/accelerator-extra.zip
 
       - name: Upload Release.unsigned related files
         uses: svenstaro/upload-release-action@v2
@@ -270,7 +270,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
-          file: build_artifacts/v2ray-extra.zip
+          file: build_artifacts/accelerator-extra.zip
           tag: ${{ github.ref }}
           overwrite: true
   buildContainer:
@@ -286,10 +286,10 @@ jobs:
       VERSION: ${{ github.event.release.tag_name }}
       TIMESTAMP: ${{ github.event.release.created_at }}
       PRERELEASE: ${{ github.event.release.prerelease }}
-      VARIANTS: | # <v2ray variant>:<image tag suffix>
+      VARIANTS: | # <accelerator variant>:<image tag suffix>
         std:
         extra:-extra
-      ARCHS: | # <v2ray arch name>:<container arch name>
+      ARCHS: | # <accelerator arch name>:<container arch name>
         32:386
         64:amd64
         arm32-v6:arm/v6
@@ -309,7 +309,7 @@ jobs:
       - name: Build Images
         id: build-image
         run: |
-          image=v2ray
+          image=accelerator
           tags=
 
           timestamp=$(date -d $TIMESTAMP +%s)

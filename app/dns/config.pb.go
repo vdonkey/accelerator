@@ -7,10 +7,10 @@
 package dns
 
 import (
-	fakedns "github.com/v2fly/v2ray-core/v5/app/dns/fakedns"
-	routercommon "github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	net "github.com/v2fly/v2ray-core/v5/common/net"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
+	fakedns "github.com/vdonkey/accelerator/v5/app/dns/fakedns"
+	routercommon "github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	net "github.com/vdonkey/accelerator/v5/common/net"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -236,9 +236,9 @@ type NameServer struct {
 	//
 	// Deprecated: Marked as deprecated in app/dns/config.proto.
 	SkipFallback     bool              `protobuf:"varint,6,opt,name=skipFallback,proto3" json:"skipFallback,omitempty"`
-	QueryStrategy    *QueryStrategy    `protobuf:"varint,8,opt,name=query_strategy,json=queryStrategy,proto3,enum=v2ray.core.app.dns.QueryStrategy,oneof" json:"query_strategy,omitempty"`
-	CacheStrategy    *CacheStrategy    `protobuf:"varint,9,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=v2ray.core.app.dns.CacheStrategy,oneof" json:"cache_strategy,omitempty"`
-	FallbackStrategy *FallbackStrategy `protobuf:"varint,10,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=v2ray.core.app.dns.FallbackStrategy,oneof" json:"fallback_strategy,omitempty"`
+	QueryStrategy    *QueryStrategy    `protobuf:"varint,8,opt,name=query_strategy,json=queryStrategy,proto3,enum=accelerator.core.app.dns.QueryStrategy,oneof" json:"query_strategy,omitempty"`
+	CacheStrategy    *CacheStrategy    `protobuf:"varint,9,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=accelerator.core.app.dns.CacheStrategy,oneof" json:"cache_strategy,omitempty"`
+	FallbackStrategy *FallbackStrategy `protobuf:"varint,10,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=accelerator.core.app.dns.FallbackStrategy,oneof" json:"fallback_strategy,omitempty"`
 }
 
 func (x *NameServer) Reset() {
@@ -356,11 +356,11 @@ type HostMapping struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=v2ray.core.app.dns.DomainMatchingType" json:"type,omitempty"`
+	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=accelerator.core.app.dns.DomainMatchingType" json:"type,omitempty"`
 	Domain string             `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	Ip     [][]byte           `protobuf:"bytes,3,rep,name=ip,proto3" json:"ip,omitempty"`
 	// ProxiedDomain indicates the mapped domain has the same IP address on this
-	// domain. V2Ray will use this domain for IP queries.
+	// domain. Vdonkey will use this domain for IP queries.
 	ProxiedDomain string `protobuf:"bytes,4,opt,name=proxied_domain,json=proxiedDomain,proto3" json:"proxied_domain,omitempty"`
 }
 
@@ -467,11 +467,11 @@ type Config struct {
 	// Deprecated: Marked as deprecated in app/dns/config.proto.
 	DisableFallbackIfMatch bool `protobuf:"varint,11,opt,name=disableFallbackIfMatch,proto3" json:"disableFallbackIfMatch,omitempty"`
 	// Default query strategy (IPv4, IPv6, or both) for each name server.
-	QueryStrategy QueryStrategy `protobuf:"varint,9,opt,name=query_strategy,json=queryStrategy,proto3,enum=v2ray.core.app.dns.QueryStrategy" json:"query_strategy,omitempty"`
+	QueryStrategy QueryStrategy `protobuf:"varint,9,opt,name=query_strategy,json=queryStrategy,proto3,enum=accelerator.core.app.dns.QueryStrategy" json:"query_strategy,omitempty"`
 	// Default cache strategy for each name server.
-	CacheStrategy CacheStrategy `protobuf:"varint,12,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=v2ray.core.app.dns.CacheStrategy" json:"cache_strategy,omitempty"`
+	CacheStrategy CacheStrategy `protobuf:"varint,12,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=accelerator.core.app.dns.CacheStrategy" json:"cache_strategy,omitempty"`
 	// Default fallback strategy for each name server.
-	FallbackStrategy FallbackStrategy `protobuf:"varint,13,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=v2ray.core.app.dns.FallbackStrategy" json:"fallback_strategy,omitempty"`
+	FallbackStrategy FallbackStrategy `protobuf:"varint,13,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=accelerator.core.app.dns.FallbackStrategy" json:"fallback_strategy,omitempty"`
 }
 
 func (x *Config) Reset() {
@@ -641,11 +641,11 @@ type SimplifiedConfig struct {
 	// Deprecated: Marked as deprecated in app/dns/config.proto.
 	DisableFallbackIfMatch bool `protobuf:"varint,11,opt,name=disableFallbackIfMatch,proto3" json:"disableFallbackIfMatch,omitempty"`
 	// Default query strategy (IPv4, IPv6, or both) for each name server.
-	QueryStrategy QueryStrategy `protobuf:"varint,9,opt,name=query_strategy,json=queryStrategy,proto3,enum=v2ray.core.app.dns.QueryStrategy" json:"query_strategy,omitempty"`
+	QueryStrategy QueryStrategy `protobuf:"varint,9,opt,name=query_strategy,json=queryStrategy,proto3,enum=accelerator.core.app.dns.QueryStrategy" json:"query_strategy,omitempty"`
 	// Default cache strategy for each name server.
-	CacheStrategy CacheStrategy `protobuf:"varint,12,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=v2ray.core.app.dns.CacheStrategy" json:"cache_strategy,omitempty"`
+	CacheStrategy CacheStrategy `protobuf:"varint,12,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=accelerator.core.app.dns.CacheStrategy" json:"cache_strategy,omitempty"`
 	// Default fallback strategy for each name server.
-	FallbackStrategy FallbackStrategy `protobuf:"varint,13,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=v2ray.core.app.dns.FallbackStrategy" json:"fallback_strategy,omitempty"`
+	FallbackStrategy FallbackStrategy `protobuf:"varint,13,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=accelerator.core.app.dns.FallbackStrategy" json:"fallback_strategy,omitempty"`
 }
 
 func (x *SimplifiedConfig) Reset() {
@@ -772,11 +772,11 @@ type SimplifiedHostMapping struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=v2ray.core.app.dns.DomainMatchingType" json:"type,omitempty"`
+	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=accelerator.core.app.dns.DomainMatchingType" json:"type,omitempty"`
 	Domain string             `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	Ip     []string           `protobuf:"bytes,3,rep,name=ip,proto3" json:"ip,omitempty"`
 	// ProxiedDomain indicates the mapped domain has the same IP address on this
-	// domain. V2Ray will use this domain for IP queries.
+	// domain. Vdonkey will use this domain for IP queries.
 	ProxiedDomain string `protobuf:"bytes,4,opt,name=proxied_domain,json=proxiedDomain,proto3" json:"proxied_domain,omitempty"`
 }
 
@@ -856,9 +856,9 @@ type SimplifiedNameServer struct {
 	//
 	// Deprecated: Marked as deprecated in app/dns/config.proto.
 	SkipFallback     bool                    `protobuf:"varint,6,opt,name=skipFallback,proto3" json:"skipFallback,omitempty"`
-	QueryStrategy    *QueryStrategy          `protobuf:"varint,8,opt,name=query_strategy,json=queryStrategy,proto3,enum=v2ray.core.app.dns.QueryStrategy,oneof" json:"query_strategy,omitempty"`
-	CacheStrategy    *CacheStrategy          `protobuf:"varint,9,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=v2ray.core.app.dns.CacheStrategy,oneof" json:"cache_strategy,omitempty"`
-	FallbackStrategy *FallbackStrategy       `protobuf:"varint,10,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=v2ray.core.app.dns.FallbackStrategy,oneof" json:"fallback_strategy,omitempty"`
+	QueryStrategy    *QueryStrategy          `protobuf:"varint,8,opt,name=query_strategy,json=queryStrategy,proto3,enum=accelerator.core.app.dns.QueryStrategy,oneof" json:"query_strategy,omitempty"`
+	CacheStrategy    *CacheStrategy          `protobuf:"varint,9,opt,name=cache_strategy,json=cacheStrategy,proto3,enum=accelerator.core.app.dns.CacheStrategy,oneof" json:"cache_strategy,omitempty"`
+	FallbackStrategy *FallbackStrategy       `protobuf:"varint,10,opt,name=fallback_strategy,json=fallbackStrategy,proto3,enum=accelerator.core.app.dns.FallbackStrategy,oneof" json:"fallback_strategy,omitempty"`
 	GeoDomain        []*routercommon.GeoSite `protobuf:"bytes,68001,rep,name=geo_domain,json=geoDomain,proto3" json:"geo_domain,omitempty"`
 }
 
@@ -984,7 +984,7 @@ type NameServer_PriorityDomain struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=v2ray.core.app.dns.DomainMatchingType" json:"type,omitempty"`
+	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=accelerator.core.app.dns.DomainMatchingType" json:"type,omitempty"`
 	Domain string             `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 }
 
@@ -1094,7 +1094,7 @@ type SimplifiedNameServer_PriorityDomain struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=v2ray.core.app.dns.DomainMatchingType" json:"type,omitempty"`
+	Type   DomainMatchingType `protobuf:"varint,1,opt,name=type,proto3,enum=accelerator.core.app.dns.DomainMatchingType" json:"type,omitempty"`
 	Domain string             `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 }
 
@@ -1502,64 +1502,64 @@ func file_app_dns_config_proto_rawDescGZIP() []byte {
 var file_app_dns_config_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
 var file_app_dns_config_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_app_dns_config_proto_goTypes = []interface{}{
-	(DomainMatchingType)(0),                     // 0: v2ray.core.app.dns.DomainMatchingType
-	(QueryStrategy)(0),                          // 1: v2ray.core.app.dns.QueryStrategy
-	(CacheStrategy)(0),                          // 2: v2ray.core.app.dns.CacheStrategy
-	(FallbackStrategy)(0),                       // 3: v2ray.core.app.dns.FallbackStrategy
-	(*NameServer)(nil),                          // 4: v2ray.core.app.dns.NameServer
-	(*HostMapping)(nil),                         // 5: v2ray.core.app.dns.HostMapping
-	(*Config)(nil),                              // 6: v2ray.core.app.dns.Config
-	(*SimplifiedConfig)(nil),                    // 7: v2ray.core.app.dns.SimplifiedConfig
-	(*SimplifiedHostMapping)(nil),               // 8: v2ray.core.app.dns.SimplifiedHostMapping
-	(*SimplifiedNameServer)(nil),                // 9: v2ray.core.app.dns.SimplifiedNameServer
-	(*NameServer_PriorityDomain)(nil),           // 10: v2ray.core.app.dns.NameServer.PriorityDomain
-	(*NameServer_OriginalRule)(nil),             // 11: v2ray.core.app.dns.NameServer.OriginalRule
-	nil,                                         // 12: v2ray.core.app.dns.Config.HostsEntry
-	(*SimplifiedNameServer_PriorityDomain)(nil), // 13: v2ray.core.app.dns.SimplifiedNameServer.PriorityDomain
-	(*SimplifiedNameServer_OriginalRule)(nil),   // 14: v2ray.core.app.dns.SimplifiedNameServer.OriginalRule
-	(*net.Endpoint)(nil),                        // 15: v2ray.core.common.net.Endpoint
-	(*routercommon.GeoIP)(nil),                  // 16: v2ray.core.app.router.routercommon.GeoIP
-	(*fakedns.FakeDnsPoolMulti)(nil),            // 17: v2ray.core.app.dns.fakedns.FakeDnsPoolMulti
-	(*routercommon.GeoSite)(nil),                // 18: v2ray.core.app.router.routercommon.GeoSite
-	(*net.IPOrDomain)(nil),                      // 19: v2ray.core.common.net.IPOrDomain
+	(DomainMatchingType)(0),                     // 0: accelerator.core.app.dns.DomainMatchingType
+	(QueryStrategy)(0),                          // 1: accelerator.core.app.dns.QueryStrategy
+	(CacheStrategy)(0),                          // 2: accelerator.core.app.dns.CacheStrategy
+	(FallbackStrategy)(0),                       // 3: accelerator.core.app.dns.FallbackStrategy
+	(*NameServer)(nil),                          // 4: accelerator.core.app.dns.NameServer
+	(*HostMapping)(nil),                         // 5: accelerator.core.app.dns.HostMapping
+	(*Config)(nil),                              // 6: accelerator.core.app.dns.Config
+	(*SimplifiedConfig)(nil),                    // 7: accelerator.core.app.dns.SimplifiedConfig
+	(*SimplifiedHostMapping)(nil),               // 8: accelerator.core.app.dns.SimplifiedHostMapping
+	(*SimplifiedNameServer)(nil),                // 9: accelerator.core.app.dns.SimplifiedNameServer
+	(*NameServer_PriorityDomain)(nil),           // 10: accelerator.core.app.dns.NameServer.PriorityDomain
+	(*NameServer_OriginalRule)(nil),             // 11: accelerator.core.app.dns.NameServer.OriginalRule
+	nil,                                         // 12: accelerator.core.app.dns.Config.HostsEntry
+	(*SimplifiedNameServer_PriorityDomain)(nil), // 13: accelerator.core.app.dns.SimplifiedNameServer.PriorityDomain
+	(*SimplifiedNameServer_OriginalRule)(nil),   // 14: accelerator.core.app.dns.SimplifiedNameServer.OriginalRule
+	(*net.Endpoint)(nil),                        // 15: accelerator.core.common.net.Endpoint
+	(*routercommon.GeoIP)(nil),                  // 16: accelerator.core.app.router.routercommon.GeoIP
+	(*fakedns.FakeDnsPoolMulti)(nil),            // 17: accelerator.core.app.dns.fakedns.FakeDnsPoolMulti
+	(*routercommon.GeoSite)(nil),                // 18: accelerator.core.app.router.routercommon.GeoSite
+	(*net.IPOrDomain)(nil),                      // 19: accelerator.core.common.net.IPOrDomain
 }
 var file_app_dns_config_proto_depIdxs = []int32{
-	15, // 0: v2ray.core.app.dns.NameServer.address:type_name -> v2ray.core.common.net.Endpoint
-	10, // 1: v2ray.core.app.dns.NameServer.prioritized_domain:type_name -> v2ray.core.app.dns.NameServer.PriorityDomain
-	16, // 2: v2ray.core.app.dns.NameServer.geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	11, // 3: v2ray.core.app.dns.NameServer.original_rules:type_name -> v2ray.core.app.dns.NameServer.OriginalRule
-	17, // 4: v2ray.core.app.dns.NameServer.fake_dns:type_name -> v2ray.core.app.dns.fakedns.FakeDnsPoolMulti
-	1,  // 5: v2ray.core.app.dns.NameServer.query_strategy:type_name -> v2ray.core.app.dns.QueryStrategy
-	2,  // 6: v2ray.core.app.dns.NameServer.cache_strategy:type_name -> v2ray.core.app.dns.CacheStrategy
-	3,  // 7: v2ray.core.app.dns.NameServer.fallback_strategy:type_name -> v2ray.core.app.dns.FallbackStrategy
-	0,  // 8: v2ray.core.app.dns.HostMapping.type:type_name -> v2ray.core.app.dns.DomainMatchingType
-	15, // 9: v2ray.core.app.dns.Config.NameServers:type_name -> v2ray.core.common.net.Endpoint
-	4,  // 10: v2ray.core.app.dns.Config.name_server:type_name -> v2ray.core.app.dns.NameServer
-	12, // 11: v2ray.core.app.dns.Config.Hosts:type_name -> v2ray.core.app.dns.Config.HostsEntry
-	5,  // 12: v2ray.core.app.dns.Config.static_hosts:type_name -> v2ray.core.app.dns.HostMapping
-	17, // 13: v2ray.core.app.dns.Config.fake_dns:type_name -> v2ray.core.app.dns.fakedns.FakeDnsPoolMulti
-	1,  // 14: v2ray.core.app.dns.Config.query_strategy:type_name -> v2ray.core.app.dns.QueryStrategy
-	2,  // 15: v2ray.core.app.dns.Config.cache_strategy:type_name -> v2ray.core.app.dns.CacheStrategy
-	3,  // 16: v2ray.core.app.dns.Config.fallback_strategy:type_name -> v2ray.core.app.dns.FallbackStrategy
-	9,  // 17: v2ray.core.app.dns.SimplifiedConfig.name_server:type_name -> v2ray.core.app.dns.SimplifiedNameServer
-	8,  // 18: v2ray.core.app.dns.SimplifiedConfig.static_hosts:type_name -> v2ray.core.app.dns.SimplifiedHostMapping
-	17, // 19: v2ray.core.app.dns.SimplifiedConfig.fake_dns:type_name -> v2ray.core.app.dns.fakedns.FakeDnsPoolMulti
-	1,  // 20: v2ray.core.app.dns.SimplifiedConfig.query_strategy:type_name -> v2ray.core.app.dns.QueryStrategy
-	2,  // 21: v2ray.core.app.dns.SimplifiedConfig.cache_strategy:type_name -> v2ray.core.app.dns.CacheStrategy
-	3,  // 22: v2ray.core.app.dns.SimplifiedConfig.fallback_strategy:type_name -> v2ray.core.app.dns.FallbackStrategy
-	0,  // 23: v2ray.core.app.dns.SimplifiedHostMapping.type:type_name -> v2ray.core.app.dns.DomainMatchingType
-	15, // 24: v2ray.core.app.dns.SimplifiedNameServer.address:type_name -> v2ray.core.common.net.Endpoint
-	13, // 25: v2ray.core.app.dns.SimplifiedNameServer.prioritized_domain:type_name -> v2ray.core.app.dns.SimplifiedNameServer.PriorityDomain
-	16, // 26: v2ray.core.app.dns.SimplifiedNameServer.geoip:type_name -> v2ray.core.app.router.routercommon.GeoIP
-	14, // 27: v2ray.core.app.dns.SimplifiedNameServer.original_rules:type_name -> v2ray.core.app.dns.SimplifiedNameServer.OriginalRule
-	17, // 28: v2ray.core.app.dns.SimplifiedNameServer.fake_dns:type_name -> v2ray.core.app.dns.fakedns.FakeDnsPoolMulti
-	1,  // 29: v2ray.core.app.dns.SimplifiedNameServer.query_strategy:type_name -> v2ray.core.app.dns.QueryStrategy
-	2,  // 30: v2ray.core.app.dns.SimplifiedNameServer.cache_strategy:type_name -> v2ray.core.app.dns.CacheStrategy
-	3,  // 31: v2ray.core.app.dns.SimplifiedNameServer.fallback_strategy:type_name -> v2ray.core.app.dns.FallbackStrategy
-	18, // 32: v2ray.core.app.dns.SimplifiedNameServer.geo_domain:type_name -> v2ray.core.app.router.routercommon.GeoSite
-	0,  // 33: v2ray.core.app.dns.NameServer.PriorityDomain.type:type_name -> v2ray.core.app.dns.DomainMatchingType
-	19, // 34: v2ray.core.app.dns.Config.HostsEntry.value:type_name -> v2ray.core.common.net.IPOrDomain
-	0,  // 35: v2ray.core.app.dns.SimplifiedNameServer.PriorityDomain.type:type_name -> v2ray.core.app.dns.DomainMatchingType
+	15, // 0: accelerator.core.app.dns.NameServer.address:type_name -> accelerator.core.common.net.Endpoint
+	10, // 1: accelerator.core.app.dns.NameServer.prioritized_domain:type_name -> accelerator.core.app.dns.NameServer.PriorityDomain
+	16, // 2: accelerator.core.app.dns.NameServer.geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	11, // 3: accelerator.core.app.dns.NameServer.original_rules:type_name -> accelerator.core.app.dns.NameServer.OriginalRule
+	17, // 4: accelerator.core.app.dns.NameServer.fake_dns:type_name -> accelerator.core.app.dns.fakedns.FakeDnsPoolMulti
+	1,  // 5: accelerator.core.app.dns.NameServer.query_strategy:type_name -> accelerator.core.app.dns.QueryStrategy
+	2,  // 6: accelerator.core.app.dns.NameServer.cache_strategy:type_name -> accelerator.core.app.dns.CacheStrategy
+	3,  // 7: accelerator.core.app.dns.NameServer.fallback_strategy:type_name -> accelerator.core.app.dns.FallbackStrategy
+	0,  // 8: accelerator.core.app.dns.HostMapping.type:type_name -> accelerator.core.app.dns.DomainMatchingType
+	15, // 9: accelerator.core.app.dns.Config.NameServers:type_name -> accelerator.core.common.net.Endpoint
+	4,  // 10: accelerator.core.app.dns.Config.name_server:type_name -> accelerator.core.app.dns.NameServer
+	12, // 11: accelerator.core.app.dns.Config.Hosts:type_name -> accelerator.core.app.dns.Config.HostsEntry
+	5,  // 12: accelerator.core.app.dns.Config.static_hosts:type_name -> accelerator.core.app.dns.HostMapping
+	17, // 13: accelerator.core.app.dns.Config.fake_dns:type_name -> accelerator.core.app.dns.fakedns.FakeDnsPoolMulti
+	1,  // 14: accelerator.core.app.dns.Config.query_strategy:type_name -> accelerator.core.app.dns.QueryStrategy
+	2,  // 15: accelerator.core.app.dns.Config.cache_strategy:type_name -> accelerator.core.app.dns.CacheStrategy
+	3,  // 16: accelerator.core.app.dns.Config.fallback_strategy:type_name -> accelerator.core.app.dns.FallbackStrategy
+	9,  // 17: accelerator.core.app.dns.SimplifiedConfig.name_server:type_name -> accelerator.core.app.dns.SimplifiedNameServer
+	8,  // 18: accelerator.core.app.dns.SimplifiedConfig.static_hosts:type_name -> accelerator.core.app.dns.SimplifiedHostMapping
+	17, // 19: accelerator.core.app.dns.SimplifiedConfig.fake_dns:type_name -> accelerator.core.app.dns.fakedns.FakeDnsPoolMulti
+	1,  // 20: accelerator.core.app.dns.SimplifiedConfig.query_strategy:type_name -> accelerator.core.app.dns.QueryStrategy
+	2,  // 21: accelerator.core.app.dns.SimplifiedConfig.cache_strategy:type_name -> accelerator.core.app.dns.CacheStrategy
+	3,  // 22: accelerator.core.app.dns.SimplifiedConfig.fallback_strategy:type_name -> accelerator.core.app.dns.FallbackStrategy
+	0,  // 23: accelerator.core.app.dns.SimplifiedHostMapping.type:type_name -> accelerator.core.app.dns.DomainMatchingType
+	15, // 24: accelerator.core.app.dns.SimplifiedNameServer.address:type_name -> accelerator.core.common.net.Endpoint
+	13, // 25: accelerator.core.app.dns.SimplifiedNameServer.prioritized_domain:type_name -> accelerator.core.app.dns.SimplifiedNameServer.PriorityDomain
+	16, // 26: accelerator.core.app.dns.SimplifiedNameServer.geoip:type_name -> accelerator.core.app.router.routercommon.GeoIP
+	14, // 27: accelerator.core.app.dns.SimplifiedNameServer.original_rules:type_name -> accelerator.core.app.dns.SimplifiedNameServer.OriginalRule
+	17, // 28: accelerator.core.app.dns.SimplifiedNameServer.fake_dns:type_name -> accelerator.core.app.dns.fakedns.FakeDnsPoolMulti
+	1,  // 29: accelerator.core.app.dns.SimplifiedNameServer.query_strategy:type_name -> accelerator.core.app.dns.QueryStrategy
+	2,  // 30: accelerator.core.app.dns.SimplifiedNameServer.cache_strategy:type_name -> accelerator.core.app.dns.CacheStrategy
+	3,  // 31: accelerator.core.app.dns.SimplifiedNameServer.fallback_strategy:type_name -> accelerator.core.app.dns.FallbackStrategy
+	18, // 32: accelerator.core.app.dns.SimplifiedNameServer.geo_domain:type_name -> accelerator.core.app.router.routercommon.GeoSite
+	0,  // 33: accelerator.core.app.dns.NameServer.PriorityDomain.type:type_name -> accelerator.core.app.dns.DomainMatchingType
+	19, // 34: accelerator.core.app.dns.Config.HostsEntry.value:type_name -> accelerator.core.common.net.IPOrDomain
+	0,  // 35: accelerator.core.app.dns.SimplifiedNameServer.PriorityDomain.type:type_name -> accelerator.core.app.dns.DomainMatchingType
 	36, // [36:36] is the sub-list for method output_type
 	36, // [36:36] is the sub-list for method input_type
 	36, // [36:36] is the sub-list for extension type_name

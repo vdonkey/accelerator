@@ -8,34 +8,34 @@ import (
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 
-	core "github.com/v2fly/v2ray-core/v5"
-	"github.com/v2fly/v2ray-core/v5/app/dispatcher"
-	"github.com/v2fly/v2ray-core/v5/app/log"
-	"github.com/v2fly/v2ray-core/v5/app/proxyman"
-	"github.com/v2fly/v2ray-core/v5/app/router"
-	"github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	"github.com/v2fly/v2ray-core/v5/common"
-	clog "github.com/v2fly/v2ray-core/v5/common/log"
-	"github.com/v2fly/v2ray-core/v5/common/net"
-	"github.com/v2fly/v2ray-core/v5/common/protocol"
-	"github.com/v2fly/v2ray-core/v5/common/serial"
-	"github.com/v2fly/v2ray-core/v5/infra/conf/cfgcommon/muxcfg"
-	"github.com/v2fly/v2ray-core/v5/infra/conf/cfgcommon/testassist"
-	_ "github.com/v2fly/v2ray-core/v5/infra/conf/geodata/memconservative"
-	_ "github.com/v2fly/v2ray-core/v5/infra/conf/geodata/standard"
-	v4 "github.com/v2fly/v2ray-core/v5/infra/conf/v4"
-	"github.com/v2fly/v2ray-core/v5/proxy/blackhole"
-	dns_proxy "github.com/v2fly/v2ray-core/v5/proxy/dns"
-	"github.com/v2fly/v2ray-core/v5/proxy/freedom"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess"
-	"github.com/v2fly/v2ray-core/v5/proxy/vmess/inbound"
-	"github.com/v2fly/v2ray-core/v5/transport/internet"
-	"github.com/v2fly/v2ray-core/v5/transport/internet/http"
-	"github.com/v2fly/v2ray-core/v5/transport/internet/tls"
-	"github.com/v2fly/v2ray-core/v5/transport/internet/websocket"
+	core "github.com/vdonkey/accelerator/v5"
+	"github.com/vdonkey/accelerator/v5/app/dispatcher"
+	"github.com/vdonkey/accelerator/v5/app/log"
+	"github.com/vdonkey/accelerator/v5/app/proxyman"
+	"github.com/vdonkey/accelerator/v5/app/router"
+	"github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	"github.com/vdonkey/accelerator/v5/common"
+	clog "github.com/vdonkey/accelerator/v5/common/log"
+	"github.com/vdonkey/accelerator/v5/common/net"
+	"github.com/vdonkey/accelerator/v5/common/protocol"
+	"github.com/vdonkey/accelerator/v5/common/serial"
+	"github.com/vdonkey/accelerator/v5/infra/conf/cfgcommon/muxcfg"
+	"github.com/vdonkey/accelerator/v5/infra/conf/cfgcommon/testassist"
+	_ "github.com/vdonkey/accelerator/v5/infra/conf/geodata/memconservative"
+	_ "github.com/vdonkey/accelerator/v5/infra/conf/geodata/standard"
+	v4 "github.com/vdonkey/accelerator/v5/infra/conf/v4"
+	"github.com/vdonkey/accelerator/v5/proxy/blackhole"
+	dns_proxy "github.com/vdonkey/accelerator/v5/proxy/dns"
+	"github.com/vdonkey/accelerator/v5/proxy/freedom"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess"
+	"github.com/vdonkey/accelerator/v5/proxy/vmess/inbound"
+	"github.com/vdonkey/accelerator/v5/transport/internet"
+	"github.com/vdonkey/accelerator/v5/transport/internet/http"
+	"github.com/vdonkey/accelerator/v5/transport/internet/tls"
+	"github.com/vdonkey/accelerator/v5/transport/internet/websocket"
 )
 
-func TestV2RayConfig(t *testing.T) {
+func TestAcceleratorConfig(t *testing.T) {
 	createParser := func() func(string) (proto.Message, error) {
 		return func(s string) (proto.Message, error) {
 			config := new(v4.Config)
@@ -54,9 +54,9 @@ func TestV2RayConfig(t *testing.T) {
 					"settings": {}
 				},
 				"log": {
-					"access": "/var/log/v2ray/access.log",
+					"access": "/var/log/accelerator/access.log",
 					"loglevel": "error",
-					"error": "/var/log/v2ray/error.log"
+					"error": "/var/log/accelerator/error.log"
 				},
 				"inbound": {
 					"streamSettings": {
@@ -150,11 +150,11 @@ func TestV2RayConfig(t *testing.T) {
 						Error: &log.LogSpecification{
 							Type:  log.LogType_File,
 							Level: clog.Severity_Error,
-							Path:  "/var/log/v2ray/error.log",
+							Path:  "/var/log/accelerator/error.log",
 						},
 						Access: &log.LogSpecification{
 							Type: log.LogType_File,
-							Path: "/var/log/v2ray/access.log",
+							Path: "/var/log/accelerator/access.log",
 						},
 					}),
 					serial.ToTypedMessage(&dispatcher.Config{}),
@@ -265,7 +265,7 @@ func TestV2RayConfig(t *testing.T) {
 										}),
 									},
 								},
-								SecurityType: "v2ray.core.transport.internet.tls.Config",
+								SecurityType: "accelerator.core.transport.internet.tls.Config",
 								SecuritySettings: []*anypb.Any{
 									serial.ToTypedMessage(&tls.Config{
 										NextProtocol: []string{"h2"},
@@ -321,7 +321,7 @@ func TestV2RayConfig(t *testing.T) {
 										}),
 									},
 								},
-								SecurityType: "v2ray.core.transport.internet.tls.Config",
+								SecurityType: "accelerator.core.transport.internet.tls.Config",
 								SecuritySettings: []*anypb.Any{
 									serial.ToTypedMessage(&tls.Config{
 										NextProtocol: []string{"h2"},

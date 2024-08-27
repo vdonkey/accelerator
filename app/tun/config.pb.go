@@ -1,11 +1,11 @@
 package tun
 
 import (
-	proxyman "github.com/v2fly/v2ray-core/v5/app/proxyman"
-	routercommon "github.com/v2fly/v2ray-core/v5/app/router/routercommon"
-	packetaddr "github.com/v2fly/v2ray-core/v5/common/net/packetaddr"
-	_ "github.com/v2fly/v2ray-core/v5/common/protoext"
-	internet "github.com/v2fly/v2ray-core/v5/transport/internet"
+	proxyman "github.com/vdonkey/accelerator/v5/app/proxyman"
+	routercommon "github.com/vdonkey/accelerator/v5/app/router/routercommon"
+	packetaddr "github.com/vdonkey/accelerator/v5/common/net/packetaddr"
+	_ "github.com/vdonkey/accelerator/v5/common/protoext"
+	internet "github.com/vdonkey/accelerator/v5/transport/internet"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -27,7 +27,7 @@ type Config struct {
 	Name                  string                    `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Mtu                   uint32                    `protobuf:"varint,2,opt,name=mtu,proto3" json:"mtu,omitempty"`
 	UserLevel             uint32                    `protobuf:"varint,3,opt,name=user_level,json=userLevel,proto3" json:"user_level,omitempty"`
-	PacketEncoding        packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=v2ray.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
+	PacketEncoding        packetaddr.PacketAddrType `protobuf:"varint,4,opt,name=packet_encoding,json=packetEncoding,proto3,enum=accelerator.core.net.packetaddr.PacketAddrType" json:"packet_encoding,omitempty"`
 	Tag                   string                    `protobuf:"bytes,5,opt,name=tag,proto3" json:"tag,omitempty"`
 	Ips                   []*routercommon.CIDR      `protobuf:"bytes,6,rep,name=ips,proto3" json:"ips,omitempty"`
 	Routes                []*routercommon.CIDR      `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty"`
@@ -222,18 +222,18 @@ func file_app_tun_config_proto_rawDescGZIP() []byte {
 
 var file_app_tun_config_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_app_tun_config_proto_goTypes = []interface{}{
-	(*Config)(nil),                  // 0: v2ray.core.app.tun.Config
-	(packetaddr.PacketAddrType)(0),  // 1: v2ray.core.net.packetaddr.PacketAddrType
-	(*routercommon.CIDR)(nil),       // 2: v2ray.core.app.router.routercommon.CIDR
-	(*internet.SocketConfig)(nil),   // 3: v2ray.core.transport.internet.SocketConfig
-	(*proxyman.SniffingConfig)(nil), // 4: v2ray.core.app.proxyman.SniffingConfig
+	(*Config)(nil),                  // 0: accelerator.core.app.tun.Config
+	(packetaddr.PacketAddrType)(0),  // 1: accelerator.core.net.packetaddr.PacketAddrType
+	(*routercommon.CIDR)(nil),       // 2: accelerator.core.app.router.routercommon.CIDR
+	(*internet.SocketConfig)(nil),   // 3: accelerator.core.transport.internet.SocketConfig
+	(*proxyman.SniffingConfig)(nil), // 4: accelerator.core.app.proxyman.SniffingConfig
 }
 var file_app_tun_config_proto_depIdxs = []int32{
-	1, // 0: v2ray.core.app.tun.Config.packet_encoding:type_name -> v2ray.core.net.packetaddr.PacketAddrType
-	2, // 1: v2ray.core.app.tun.Config.ips:type_name -> v2ray.core.app.router.routercommon.CIDR
-	2, // 2: v2ray.core.app.tun.Config.routes:type_name -> v2ray.core.app.router.routercommon.CIDR
-	3, // 3: v2ray.core.app.tun.Config.socket_settings:type_name -> v2ray.core.transport.internet.SocketConfig
-	4, // 4: v2ray.core.app.tun.Config.sniffing_settings:type_name -> v2ray.core.app.proxyman.SniffingConfig
+	1, // 0: accelerator.core.app.tun.Config.packet_encoding:type_name -> accelerator.core.net.packetaddr.PacketAddrType
+	2, // 1: accelerator.core.app.tun.Config.ips:type_name -> accelerator.core.app.router.routercommon.CIDR
+	2, // 2: accelerator.core.app.tun.Config.routes:type_name -> accelerator.core.app.router.routercommon.CIDR
+	3, // 3: accelerator.core.app.tun.Config.socket_settings:type_name -> accelerator.core.transport.internet.SocketConfig
+	4, // 4: accelerator.core.app.tun.Config.sniffing_settings:type_name -> accelerator.core.app.proxyman.SniffingConfig
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

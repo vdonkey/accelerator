@@ -1,18 +1,18 @@
 syntax = "proto3";
 
-package v2ray.core.transport.internet.tcp;
-option csharp_namespace = "V2Ray.Core.Transport.Internet.Tcp";
-option go_package = "github.com/v2fly/v2ray-core/v5/transport/internet/tcp";
-option java_package = "com.v2ray.core.transport.internet.tcp";
+package accelerator.core.transport.internet.tcp;
+option csharp_namespace = "Vdonkey.Core.Transport.Internet.Tcp";
+option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/tcp";
+option java_package = "com.accelerator.core.transport.internet.tcp";
 option java_multiple_files = true;
 
 import "google/protobuf/any.proto";
 import "common/protoext/extensions.proto";
 
 message Config {
-  option (v2ray.core.common.protoext.message_opt).type = "transport";
-  option (v2ray.core.common.protoext.message_opt).short_name = "tcp";
-  option (v2ray.core.common.protoext.message_opt).allow_restricted_mode_load = true;
+  option (accelerator.core.common.protoext.message_opt).type = "transport";
+  option (accelerator.core.common.protoext.message_opt).short_name = "tcp";
+  option (accelerator.core.common.protoext.message_opt).allow_restricted_mode_load = true;
 
 
   reserved 1;
