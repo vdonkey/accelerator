@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.dns;
-option csharp_namespace = "Vdonkey.Core.Proxy.Dns";
+option csharp_namespace = "Accelerator.Core.Proxy.Dns";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/dns";
 option java_package = "com.accelerator.core.proxy.dns";
 option java_multiple_files = true;

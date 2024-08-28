@@ -17,7 +17,7 @@ import (
 	"github.com/vdonkey/accelerator/v5/infra/conf/v5cfg"
 )
 
-// Commander is a Vdonkey feature that provides gRPC methods to external clients.
+// Commander is a Accelerator feature that provides gRPC methods to external clients.
 type Commander struct {
 	sync.Mutex
 	server   *grpc.Server

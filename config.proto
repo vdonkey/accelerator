@@ -21,7 +21,7 @@ message Config {
 
   reserved 3;
 
-  // App is for configurations of all features in Vdonkey. A feature must
+  // App is for configurations of all features in Accelerator. A feature must
   // implement the Feature interface, and its config type must be registered
   // through common.RegisterConfig.
   repeated google.protobuf.Any app = 4;
@@ -32,7 +32,7 @@ message Config {
   accelerator.core.transport.Config transport = 5 [deprecated = true];
 
   // Configuration for extensions. The config may not work if corresponding
-  // extension is not loaded into Vdonkey. Vdonkey will ignore such config during
+  // extension is not loaded into Accelerator. Accelerator will ignore such config during
   // initialization.
   repeated google.protobuf.Any extension = 6;
 }

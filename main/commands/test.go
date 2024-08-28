@@ -12,7 +12,7 @@ var CmdTest = &base.Command{
 	UsageLine:   "{{.Exec}} test [-format=json] [-c config.json] [-d dir]",
 	Short:       "test config files",
 	Long: `
-Test config files, without launching Vdonkey server.
+Test config files, without launching Accelerator server.
 
 {{.Exec}} will also use the config directory specified by environment 
 variable "accelerator.location.confdir". If no config found, it tries 
@@ -25,7 +25,7 @@ to load config from one of below:
 Arguments:
 
 	-c, -config <file>
-		Config file for Vdonkey. Multiple assign is accepted.
+		Config file for Accelerator. Multiple assign is accepted.
 
 	-d, -confdir <dir>
 		A directory with config files. Multiple assign is accepted.

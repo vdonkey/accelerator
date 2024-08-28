@@ -1,14 +1,14 @@
 ---
-name: Vdonkey 程序问题
-about: "提交一个 Vdonkey 的程序问题报告。"
+name: Accelerator 程序问题
+about: "提交一个 Accelerator 的程序问题报告。"
 ---
 
 <!--
 除非特殊情况，请完整填写所有问题。不按模板发的 issue 将直接被关闭。
-如果你遇到的问题不是 Vdonkey 的 bug，比如你不清楚如何配置，请在 https://github.com/vdonkey/accelerator/discussions 进行讨论。
+如果你遇到的问题不是 Accelerator 的 bug，比如你不清楚如何配置，请在 https://github.com/vdonkey/accelerator/discussions 进行讨论。
 -->
 
-## 你正在使用哪个版本的 Vdonkey？
+## 你正在使用哪个版本的 Accelerator？
 
 <!-- 如果服务端和客户端使用了不同版本，请注明 -->
 
@@ -76,11 +76,11 @@ about: "提交一个 Vdonkey 的程序问题报告。"
 
 
 
-## 如果 Vdonkey 无法启动，请附上 `--test` 命令的输出
+## 如果 Accelerator 无法启动，请附上 `--test` 命令的输出
 
 
 
-## 如果 Vdonkey 服务运行异常，请附上 journal 日志
+## 如果 Accelerator 服务运行异常，请附上 journal 日志
 
 <!-- 通常的命令为 `journalctl -u accelerator` -->
 

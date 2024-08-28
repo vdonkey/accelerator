@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.instman.command;
-option csharp_namespace = "Vdonkey.Core.App.Instman.Command";
+option csharp_namespace = "Accelerator.Core.App.Instman.Command";
 option go_package = "github.com/vdonkey/accelerator/v5/app/instman/command";
 option java_package = "com.accelerator.core.app.observatory.instman";
 option java_multiple_files = true;

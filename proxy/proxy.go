@@ -1,4 +1,4 @@
-// Package proxy contains all proxies used by Vdonkey.
+// Package proxy contains all proxies used by Accelerator.
 //
 // To implement an inbound or outbound proxy, one needs to do the following:
 // 1. Implement the interface(s) below.

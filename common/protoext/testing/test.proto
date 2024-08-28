@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.common.protoext.testing;
-option csharp_namespace = "Vdonkey.Core.Common.ProtoExt.Testing";
+option csharp_namespace = "Accelerator.Core.Common.ProtoExt.Testing";
 option go_package = "github.com/vdonkey/accelerator/common/protoext/testing";
 option java_package = "com.accelerator.core.common.protoext.testing";
 option java_multiple_files = true;

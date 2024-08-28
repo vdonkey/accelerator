@@ -11,7 +11,7 @@ import (
 	"github.com/vdonkey/accelerator/v5/transport/internet/udp"
 )
 
-// CreateObject creates a new object based on the given Vdonkey instance and config. The Vdonkey instance may be nil.
+// CreateObject creates a new object based on the given Accelerator instance and config. The Accelerator instance may be nil.
 func CreateObject(v *Instance, config interface{}) (interface{}, error) {
 	return CreateObjectWithEnvironment(v, config, nil)
 }
@@ -25,8 +25,8 @@ func CreateObjectWithEnvironment(v *Instance, config, environment interface{}) (
 	return common.CreateObject(ctx, config)
 }
 
-// StartInstance starts a new Vdonkey instance with given serialized config.
-// By default Vdonkey only support config in protobuf format, i.e., configFormat = "protobuf". Caller need to load other packages to add JSON support.
+// StartInstance starts a new Accelerator instance with given serialized config.
+// By default Accelerator only support config in protobuf format, i.e., configFormat = "protobuf". Caller need to load other packages to add JSON support.
 //
 // accelerator:api:stable
 func StartInstance(configFormat string, configBytes []byte) (*Instance, error) {
@@ -44,8 +44,8 @@ func StartInstance(configFormat string, configBytes []byte) (*Instance, error) {
 	return instance, nil
 }
 
-// Dial provides an easy way for upstream caller to create net.Conn through Vdonkey.
-// It dispatches the request to the given destination by the given Vdonkey instance.
+// Dial provides an easy way for upstream caller to create net.Conn through Accelerator.
+// It dispatches the request to the given destination by the given Accelerator instance.
 // Since it is under a proxy context, the LocalAddr() and RemoteAddr() in returned net.Conn
 // will not show real addresses being used for communication.
 //
@@ -55,7 +55,7 @@ func Dial(ctx context.Context, v *Instance, dest net.Destination) (net.Conn, err
 
 	dispatcher := v.GetFeature(routing.DispatcherType())
 	if dispatcher == nil {
-		return nil, newError("routing.Dispatcher is not registered in Vdonkey core")
+		return nil, newError("routing.Dispatcher is not registered in Accelerator core")
 	}
 
 	r, err := dispatcher.(routing.Dispatcher).Dispatch(ctx, dest)
@@ -71,7 +71,7 @@ func Dial(ctx context.Context, v *Instance, dest net.Destination) (net.Conn, err
 	return net.NewConnection(net.ConnectionInputMulti(r.Writer), readerOpt), nil
 }
 
-// DialUDP provides a way to exchange UDP packets through Vdonkey instance to remote servers.
+// DialUDP provides a way to exchange UDP packets through Accelerator instance to remote servers.
 // Since it is under a proxy context, the LocalAddr() in returned PacketConn will not show the real address.
 //
 // TODO: SetDeadline() / SetReadDeadline() / SetWriteDeadline() are not implemented.
@@ -82,7 +82,7 @@ func DialUDP(ctx context.Context, v *Instance) (net.PacketConn, error) {
 
 	dispatcher := v.GetFeature(routing.DispatcherType())
 	if dispatcher == nil {
-		return nil, newError("routing.Dispatcher is not registered in Vdonkey core")
+		return nil, newError("routing.Dispatcher is not registered in Accelerator core")
 	}
 	return udp.DialDispatcher(ctx, dispatcher.(routing.Dispatcher))
 }

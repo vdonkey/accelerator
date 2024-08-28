@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.http;
-option csharp_namespace = "Vdonkey.Core.Proxy.Http";
+option csharp_namespace = "Accelerator.Core.Proxy.Http";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/http";
 option java_package = "com.accelerator.core.proxy.http";
 option java_multiple_files = true;

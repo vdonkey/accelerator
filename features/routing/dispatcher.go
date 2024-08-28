@@ -9,7 +9,7 @@ import (
 )
 
 // Dispatcher is a feature that dispatches inbound requests to outbound handlers based on rules.
-// Dispatcher is required to be registered in a Vdonkey instance to make Vdonkey function properly.
+// Dispatcher is required to be registered in a Accelerator instance to make Accelerator function properly.
 //
 // accelerator:api:stable
 type Dispatcher interface {

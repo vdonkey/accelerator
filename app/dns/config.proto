@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.dns;
-option csharp_namespace = "Vdonkey.Core.App.Dns";
+option csharp_namespace = "Accelerator.Core.App.Dns";
 option go_package = "github.com/vdonkey/accelerator/v5/app/dns";
 option java_package = "com.accelerator.core.app.dns";
 option java_multiple_files = true;
@@ -73,7 +73,7 @@ message HostMapping {
   repeated bytes ip = 3;
 
   // ProxiedDomain indicates the mapped domain has the same IP address on this
-  // domain. Vdonkey will use this domain for IP queries.
+  // domain. Accelerator will use this domain for IP queries.
   string proxied_domain = 4;
 }
 
@@ -192,7 +192,7 @@ message SimplifiedHostMapping {
   repeated string ip = 3;
 
   // ProxiedDomain indicates the mapped domain has the same IP address on this
-  // domain. Vdonkey will use this domain for IP queries.
+  // domain. Accelerator will use this domain for IP queries.
   string proxied_domain = 4;
 }
 

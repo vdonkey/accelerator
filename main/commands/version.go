@@ -7,11 +7,11 @@ import (
 	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
-// CmdVersion prints Vdonkey Versions
+// CmdVersion prints Accelerator Versions
 var CmdVersion = &base.Command{
 	UsageLine: "{{.Exec}} version",
-	Short:     "print Vdonkey version",
-	Long: `Prints the build information for Vdonkey.
+	Short:     "print Accelerator version",
+	Long: `Prints the build information for Accelerator.
 `,
 	Run: executeVersion,
 }

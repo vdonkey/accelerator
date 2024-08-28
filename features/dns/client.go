@@ -26,7 +26,7 @@ func (opt IPOption) IsValid() bool {
 	return opt.IPv4Enable || opt.IPv6Enable
 }
 
-// Client is a Vdonkey feature for querying DNS information.
+// Client is a Accelerator feature for querying DNS information.
 //
 // accelerator:api:stable
 type Client interface {

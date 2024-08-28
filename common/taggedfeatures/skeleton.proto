@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.common.taggedfeatures;
-option csharp_namespace = "Vdonkey.Core.Common.Taggedfeatures";
+option csharp_namespace = "Accelerator.Core.Common.Taggedfeatures";
 option go_package = "github.com/vdonkey/accelerator/v5/common/taggedfeatures";
 option java_package = "com.accelerator.core.common.taggedfeatures";
 option java_multiple_files = true;

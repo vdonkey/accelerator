@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.reverse;
-option csharp_namespace = "Vdonkey.Core.Proxy.Reverse";
+option csharp_namespace = "Accelerator.Core.Proxy.Reverse";
 option go_package = "github.com/vdonkey/accelerator/v5/app/reverse";
 option java_package = "com.accelerator.core.proxy.reverse";
 option java_multiple_files = true;

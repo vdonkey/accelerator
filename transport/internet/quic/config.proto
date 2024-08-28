@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.transport.internet.quic;
-option csharp_namespace = "Vdonkey.Core.Transport.Internet.Quic";
+option csharp_namespace = "Accelerator.Core.Transport.Internet.Quic";
 option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/quic";
 option java_package = "com.accelerator.core.transport.internet.quic";
 option java_multiple_files = true;

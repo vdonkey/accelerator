@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.observatory.burst;
-option csharp_namespace = "Vdonkey.Core.App.Observatory.Burst";
+option csharp_namespace = "Accelerator.Core.App.Observatory.Burst";
 option go_package = "github.com/vdonkey/accelerator/v5/app/observatory/burst";
 option java_package = "com.accelerator.core.app.observatory.burst";
 option java_multiple_files = true;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package accelerator.core.app.subscription.specs;
 
-option csharp_namespace = "Vdonkey.Core.App.Subscription.Specs";
+option csharp_namespace = "Accelerator.Core.App.Subscription.Specs";
 option go_package = "github.com/vdonkey/accelerator/v5/app/subscription/specs";
 option java_package = "com.accelerator.core.app.subscription.specs";
 option java_multiple_files = true;

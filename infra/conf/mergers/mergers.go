@@ -35,14 +35,14 @@ func init() {
 	)
 }
 
-// Merger is a configurable format merger for Vdonkey config files.
+// Merger is a configurable format merger for Accelerator config files.
 type Merger struct {
 	Name       string
 	Extensions []string
 	Merge      MergeFunc
 }
 
-// MergeFunc is a utility to merge Vdonkey config from external source into a map and returns it.
+// MergeFunc is a utility to merge Accelerator config from external source into a map and returns it.
 type MergeFunc func(input interface{}, m map[string]interface{}) error
 
 var (

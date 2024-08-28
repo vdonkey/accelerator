@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.log;
-option csharp_namespace = "Vdonkey.Core.App.Log";
+option csharp_namespace = "Accelerator.Core.App.Log";
 option go_package = "github.com/vdonkey/accelerator/v5/app/log";
 option java_package = "com.accelerator.core.app.log";
 option java_multiple_files = true;

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.transport.internet.headers.utp;
-option csharp_namespace = "Vdonkey.Core.Transport.Internet.Headers.Utp";
+option csharp_namespace = "Accelerator.Core.Transport.Internet.Headers.Utp";
 option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/headers/utp";
 option java_package = "com.accelerator.core.transport.internet.headers.utp";
 option java_multiple_files = true;

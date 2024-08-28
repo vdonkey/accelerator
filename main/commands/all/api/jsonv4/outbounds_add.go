@@ -14,7 +14,7 @@ var cmdAddOutbounds = &base.Command{
 	UsageLine:   "{{.Exec}} api ado [--server=127.0.0.1:8080] [c1.json] [dir1]...",
 	Short:       "add outbounds",
 	Long: `
-Add outbounds to Vdonkey.
+Add outbounds to Accelerator.
 
 > Make sure you have "HandlerService" set in "config.api.services" 
 of server config.

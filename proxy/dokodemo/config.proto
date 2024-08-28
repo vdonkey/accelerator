@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.dokodemo;
-option csharp_namespace = "Vdonkey.Core.Proxy.Dokodemo";
+option csharp_namespace = "Accelerator.Core.Proxy.Dokodemo";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/dokodemo";
 option java_package = "com.accelerator.core.proxy.dokodemo";
 option java_multiple_files = true;

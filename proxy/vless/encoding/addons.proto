@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.vless.encoding;
-option csharp_namespace = "Vdonkey.Core.Proxy.Vless.Encoding";
+option csharp_namespace = "Accelerator.Core.Proxy.Vless.Encoding";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/vless/encoding";
 option java_package = "com.accelerator.core.proxy.vless.encoding";
 option java_multiple_files = true;

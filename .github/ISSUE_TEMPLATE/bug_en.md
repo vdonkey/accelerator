@@ -5,15 +5,15 @@ about: "Create a bug report to help us improve"
 
 <!--
 Please answer all the questions with enough information. All issues not following this template will be closed immediately.
-If you are not sure if your question is truely a bug of Vdonkey, please discuss it at https://github.com/vdonkey/accelerator/discussions first.
+If you are not sure if your question is truely a bug of Accelerator, please discuss it at https://github.com/vdonkey/accelerator/discussions first.
 -->
 
-## What version of Vdonkey are you using?
+## What version of Accelerator are you using?
 
-<!-- If you deploy different versions of Vdonkey on server and client, please explicitly point out -->
+<!-- If you deploy different versions of Accelerator on server and client, please explicitly point out -->
 
 
-## What's your scenario of using Vdonkey?
+## What's your scenario of using Accelerator?
 
 <!-- E.g., watching YouTube videos in browsers via Socks/VMess proxy -->
 
@@ -79,11 +79,11 @@ Error log file is usually at `/var/log/accelerator/error.log` on Linux.
 
 
 
-## If Vdonkey cannot start up, please attach output from `--test` command
+## If Accelerator cannot start up, please attach output from `--test` command
 
 
 
-## If Vdonkey service is abnormal, please attach journal log here
+## If Accelerator service is abnormal, please attach journal log here
 
 <!-- Usual command is `journalctl -u accelerator` -->
 

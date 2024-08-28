@@ -16,7 +16,7 @@ func BuildAccelerator() error {
 		return nil
 	}
 
-	fmt.Printf("Building Vdonkey into path (%s)\n", testBinaryPath)
+	fmt.Printf("Building Accelerator into path (%s)\n", testBinaryPath)
 	cmd := exec.Command("go", "build", "-o="+testBinaryPath, GetSourcePath())
 	return cmd.Run()
 }

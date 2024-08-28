@@ -16,13 +16,13 @@ import (
 	"github.com/vdonkey/accelerator/v5/main/commands/base"
 )
 
-// CmdRun runs Vdonkey with config
+// CmdRun runs Accelerator with config
 var CmdRun = &base.Command{
 	CustomFlags: true,
 	UsageLine:   "{{.Exec}} run [-c config.json] [-d dir]",
-	Short:       "run Vdonkey with config",
+	Short:       "run Accelerator with config",
 	Long: `
-Run Vdonkey with config.
+Run Accelerator with config.
 
 {{.Exec}} will also use the config directory specified by environment 
 variable "accelerator.location.confdir". If no config found, it tries 
@@ -35,7 +35,7 @@ to load config from one of below:
 Arguments:
 
 	-c, -config <file>
-		Config file for Vdonkey. Multiple assign is accepted.
+		Config file for Accelerator. Multiple assign is accepted.
 
 	-d, -confdir <dir>
 		A directory with config files. Multiple assign is accepted.

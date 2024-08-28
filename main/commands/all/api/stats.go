@@ -17,7 +17,7 @@ var cmdStats = &base.Command{
 	UsageLine:   "{{.Exec}} api stats [--server=127.0.0.1:8080] [pattern]...",
 	Short:       "query statistics",
 	Long: `
-Query statistics from Vdonkey.
+Query statistics from Accelerator.
 
 > Make sure you have "StatsService" set in "config.api.services" 
 of server config.

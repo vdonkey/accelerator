@@ -57,8 +57,8 @@ var (
 		return true
 	}()
 
-	certCommonName   = cmdCert.Flag.String("name", "Vdonkey Inc", "")
-	certOrganization = cmdCert.Flag.String("org", "Vdonkey Inc", "")
+	certCommonName   = cmdCert.Flag.String("name", "Accelerator Inc", "")
+	certOrganization = cmdCert.Flag.String("org", "Accelerator Inc", "")
 	certIsCA         = cmdCert.Flag.Bool("ca", false, "")
 	certJSONOutput   = cmdCert.Flag.Bool("json", true, "")
 	certFileOutput   = cmdCert.Flag.String("file", "", "")

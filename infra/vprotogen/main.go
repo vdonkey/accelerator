@@ -100,7 +100,7 @@ Download %s v%s or later from https://github.com/protocolbuffers/protobuf/releas
 func getProjectProtocVersion(url string) (string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
-		return "", fmt.Errorf("can not get the version of protobuf used in Vdonkey project")
+		return "", fmt.Errorf("can not get the version of protobuf used in Accelerator project")
 	}
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
@@ -193,7 +193,7 @@ func main() {
 You are using an old protobuf version, please update to v%s or later.
 Download it from https://github.com/protocolbuffers/protobuf/releases
 
-    * Protobuf version used in Vdonkey project: v%s
+    * Protobuf version used in Accelerator project: v%s
     * Protobuf version you have installed: v%s
 
 `, targetedVersion, targetedVersion, installedVersion)

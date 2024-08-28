@@ -14,7 +14,7 @@ var cmdRemoveInbounds = &base.Command{
 	UsageLine:   "{{.Exec}} api rmi [--server=127.0.0.1:8080] [c1.json] [dir1]...",
 	Short:       "remove inbounds",
 	Long: `
-Remove inbounds from Vdonkey.
+Remove inbounds from Accelerator.
 
 > Make sure you have "HandlerService" set in "config.api.services" 
 of server config.

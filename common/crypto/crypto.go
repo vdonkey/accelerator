@@ -1,4 +1,4 @@
-// Package crypto provides common crypto libraries for Vdonkey.
+// Package crypto provides common crypto libraries for Accelerator.
 package crypto
 
 //go:generate go run github.com/vdonkey/accelerator/v5/common/errors/errorgen

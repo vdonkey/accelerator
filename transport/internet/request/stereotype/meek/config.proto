@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.transport.internet.request.stereotype.meek;
-option csharp_namespace = "Vdonkey.Core.Transport.Internet.Request.Stereotype.Meek";
+option csharp_namespace = "Accelerator.Core.Transport.Internet.Request.Stereotype.Meek";
 option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/request/stereotype/meek";
 option java_package = "com.accelerator.core.transport.internet.request.stereotype.meek";
 option java_multiple_files = true;

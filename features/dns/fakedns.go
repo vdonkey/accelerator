@@ -5,7 +5,7 @@ import (
 	"github.com/vdonkey/accelerator/v5/features"
 )
 
-// FakeDNSEngine is a Vdonkey feature for converting between domain and fake IPs.
+// FakeDNSEngine is a Accelerator feature for converting between domain and fake IPs.
 //
 // accelerator:api:beta
 type FakeDNSEngine interface {

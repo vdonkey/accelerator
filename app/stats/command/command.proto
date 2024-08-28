@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.stats.command;
-option csharp_namespace = "Vdonkey.Core.App.Stats.Command";
+option csharp_namespace = "Accelerator.Core.App.Stats.Command";
 option go_package = "github.com/vdonkey/accelerator/v5/app/stats/command";
 option java_package = "com.accelerator.core.app.stats.command";
 option java_multiple_files = true;

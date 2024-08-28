@@ -14,7 +14,7 @@ var cmdRemoveOutbounds = &base.Command{
 	UsageLine:   "{{.Exec}} api rmo [--server=127.0.0.1:8080] [c1.json] [dir1]...",
 	Short:       "remove outbounds",
 	Long: `
-Remove outbounds from Vdonkey.
+Remove outbounds from Accelerator.
 
 > Make sure you have "HandlerService" set in "config.api.services" 
 of server config.

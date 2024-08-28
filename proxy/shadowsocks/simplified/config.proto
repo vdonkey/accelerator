@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.shadowsocks.simplified;
-option csharp_namespace = "Vdonkey.Core.Proxy.Shadowsocks.Simplified";
+option csharp_namespace = "Accelerator.Core.Proxy.Shadowsocks.Simplified";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/shadowsocks/simplified";
 option java_package = "com.accelerator.core.proxy.shadowsocks.simplified";
 option java_multiple_files = true;

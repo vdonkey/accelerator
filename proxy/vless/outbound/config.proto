@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.vless.outbound;
-option csharp_namespace = "Vdonkey.Core.Proxy.Vless.Outbound";
+option csharp_namespace = "Accelerator.Core.Proxy.Vless.Outbound";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/vless/outbound";
 option java_package = "com.accelerator.core.proxy.vless.outbound";
 option java_multiple_files = true;

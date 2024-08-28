@@ -14,7 +14,7 @@ var cmdAddInbounds = &base.Command{
 	UsageLine:   "{{.Exec}} api adi [--server=127.0.0.1:8080] [c1.json] [dir1]...",
 	Short:       "add inbounds",
 	Long: `
-Add inbounds to Vdonkey.
+Add inbounds to Accelerator.
 
 > Make sure you have "HandlerService" set in "config.api.services" 
 of server config.

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.app.restfulapi;
-option csharp_namespace = "Vdonkey.App.Restapi";
+option csharp_namespace = "Accelerator.App.Restapi";
 option go_package = "github.com/vdonkey/accelerator/v5/app/restfulapi";
 option java_package = "com.accelerator.core.app.restapi";
 option java_multiple_files = true;

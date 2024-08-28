@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.proxyman.command;
-option csharp_namespace = "Vdonkey.Core.App.Proxyman.Command";
+option csharp_namespace = "Accelerator.Core.App.Proxyman.Command";
 option go_package = "github.com/vdonkey/accelerator/v5/app/proxyman/command";
 option java_package = "com.accelerator.core.app.proxyman.command";
 option java_multiple_files = true;

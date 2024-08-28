@@ -11,16 +11,16 @@ master branch, though we would still try our best to follow the compatibility cl
 
 ## 汇报安全风险 Reporting a Vulnerability
 
-使用邮箱: security |at| vdonkey.org。
+使用邮箱: security |at| v2fly.org。
 
-Report to email: security |at| vdonkey.org.
+Report to email: security |at| v2fly.org.
 
 GPG public key:
 
 ```
 pub   rsa4096 2020-06-02 [SC] [有效至：2022-01-02]
       E2E35E27914FB007C0D4B6DDB117BA3BE8B494A7
-uid           [ 绝对 ] Vdonkey Developers <dev@vdonkey.org>
+uid           [ 绝对 ] Vdonkey Developers <dev@v2fly.org>
 sub   rsa4096 2020-06-02 [E] [有效至：2022-01-02]
 sub   rsa4096 2020-11-08 [S] [有效至：2022-01-02] // 用于 Debian / Ubuntu 签名
 

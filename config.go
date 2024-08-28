@@ -31,14 +31,14 @@ const (
 	FormatProtobufShort = "pb"
 )
 
-// ConfigFormat is a configurable format of Vdonkey config file.
+// ConfigFormat is a configurable format of Accelerator config file.
 type ConfigFormat struct {
 	Name      []string
 	Extension []string
 	Loader    ConfigLoader
 }
 
-// ConfigLoader is a utility to load Vdonkey config from external source.
+// ConfigLoader is a utility to load Accelerator config from external source.
 type ConfigLoader func(input interface{}) (*Config, error)
 
 var (

@@ -1,6 +1,6 @@
 package core
 
-// Annotation is a concept in Vdonkey. This struct is only for documentation. It is not used anywhere.
+// Annotation is a concept in Accelerator. This struct is only for documentation. It is not used anywhere.
 // Annotations begin with "accelerator:" in comment, as metadata of functions or types.
 type Annotation struct {
 	// API is for types or functions that can be used in other libs. Possible values are:

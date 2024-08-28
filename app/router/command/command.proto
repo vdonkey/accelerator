@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.router.command;
-option csharp_namespace = "Vdonkey.Core.App.Router.Command";
+option csharp_namespace = "Accelerator.Core.App.Router.Command";
 option go_package = "github.com/vdonkey/accelerator/v5/app/router/command";
 option java_package = "com.accelerator.core.app.router.command";
 option java_multiple_files = true;

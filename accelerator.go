@@ -20,7 +20,7 @@ import (
 	"github.com/vdonkey/accelerator/v5/features/stats"
 )
 
-// Server is an instance of Vdonkey. At any time, there must be at most one Server instance running.
+// Server is an instance of Accelerator. At any time, there must be at most one Server instance running.
 type Server interface {
 	common.Runnable
 }
@@ -87,7 +87,7 @@ func (r *resolution) resolve(allFeatures []features.Feature) (bool, error) {
 	return true, err
 }
 
-// Instance combines all functionalities in Vdonkey.
+// Instance combines all functionalities in Accelerator.
 type Instance struct {
 	access             sync.Mutex
 	features           []features.Feature
@@ -171,9 +171,9 @@ func RequireFeatures(ctx context.Context, callback interface{}) error {
 	return v.RequireFeatures(callback)
 }
 
-// New returns a new Vdonkey instance based on given configuration.
+// New returns a new Accelerator instance based on given configuration.
 // The instance is not started at this point.
-// To ensure Vdonkey instance works properly, the config must contain one Dispatcher, one InboundHandlerManager and one OutboundHandlerManager. Other features are optional.
+// To ensure Accelerator instance works properly, the config must contain one Dispatcher, one InboundHandlerManager and one OutboundHandlerManager. Other features are optional.
 func New(config *Config) (*Instance, error) {
 	server := &Instance{ctx: context.Background()}
 
@@ -262,7 +262,7 @@ func (s *Instance) Type() interface{} {
 	return ServerType()
 }
 
-// Close shutdown the Vdonkey instance.
+// Close shutdown the Accelerator instance.
 func (s *Instance) Close() error {
 	s.access.Lock()
 	defer s.access.Unlock()
@@ -345,8 +345,8 @@ func (s *Instance) GetFeature(featureType interface{}) features.Feature {
 	return getFeature(s.features, reflect.TypeOf(featureType))
 }
 
-// Start starts the Vdonkey instance, including all registered features. When Start returns error, the state of the instance is unknown.
-// A Vdonkey instance can be started only once. Upon closing, the instance is not guaranteed to start again.
+// Start starts the Accelerator instance, including all registered features. When Start returns error, the state of the instance is unknown.
+// A Accelerator instance can be started only once. Upon closing, the instance is not guaranteed to start again.
 //
 // accelerator:api:stable
 func (s *Instance) Start() error {
@@ -360,7 +360,7 @@ func (s *Instance) Start() error {
 		}
 	}
 
-	newError("Vdonkey ", Version(), " started").AtWarning().WriteToLog()
+	newError("Accelerator ", Version(), " started").AtWarning().WriteToLog()
 
 	return nil
 }

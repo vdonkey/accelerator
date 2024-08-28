@@ -46,6 +46,6 @@ func executeVerify(cmd *base.Command, args []string) {
 
 	err = signerVerify.OutputAndJudge(signerVerify.CheckSignaturesV2Fly(sigReader, files))
 	if err != nil {
-		base.Fatalf("file is not officially signed by Vdonkey: %s", err)
+		base.Fatalf("file is not officially signed by Accelerator: %s", err)
 	}
 }

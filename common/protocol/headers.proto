@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.common.protocol;
-option csharp_namespace = "Vdonkey.Core.Common.Protocol";
+option csharp_namespace = "Accelerator.Core.Common.Protocol";
 option go_package = "github.com/vdonkey/accelerator/v5/common/protocol";
 option java_package = "com.accelerator.core.common.protocol";
 option java_multiple_files = true;

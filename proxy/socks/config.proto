@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.proxy.socks;
-option csharp_namespace = "Vdonkey.Core.Proxy.Socks";
+option csharp_namespace = "Accelerator.Core.Proxy.Socks";
 option go_package = "github.com/vdonkey/accelerator/v5/proxy/socks";
 option java_package = "com.accelerator.core.proxy.socks";
 option java_multiple_files = true;

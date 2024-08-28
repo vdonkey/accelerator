@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.transport.internet.tls.utls;
-option csharp_namespace = "Vdonkey.Core.Transport.Internet.Tls.UTls";
+option csharp_namespace = "Accelerator.Core.Transport.Internet.Tls.UTls";
 option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/tls/utls";
 option java_package = "com.accelerator.core.transport.internet.tls.utls";
 option java_multiple_files = true;

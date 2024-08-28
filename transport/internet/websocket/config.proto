@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.transport.internet.websocket;
-option csharp_namespace = "Vdonkey.Core.Transport.Internet.Websocket";
+option csharp_namespace = "Accelerator.Core.Transport.Internet.Websocket";
 option go_package = "github.com/vdonkey/accelerator/v5/transport/internet/websocket";
 option java_package = "com.accelerator.core.transport.internet.websocket";
 option java_multiple_files = true;

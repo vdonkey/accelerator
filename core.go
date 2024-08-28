@@ -1,6 +1,6 @@
-// Package core provides an entry point to use Vdonkey core functionalities.
+// Package core provides an entry point to use Accelerator core functionalities.
 //
-// Vdonkey makes it possible to accept incoming network connections with certain
+// Accelerator makes it possible to accept incoming network connections with certain
 // protocol, process the data, and send them through another connection with
 // the same or a difference protocol on demand.
 //
@@ -24,7 +24,7 @@ var (
 	intro    = "A unified platform for anti-censorship."
 )
 
-// Version returns Vdonkey's version as a string, in the form of "x.y.z" where x, y and z are numbers.
+// Version returns Accelerator's version as a string, in the form of "x.y.z" where x, y and z are numbers.
 // ".z" part may be omitted in regular releases.
 func Version() string {
 	return version
@@ -33,7 +33,7 @@ func Version() string {
 // VersionStatement returns a list of strings representing the full version info.
 func VersionStatement() []string {
 	return []string{
-		serial.Concat("Vdonkey ", Version(), " (", codename, ") ", build, " (", runtime.Version(), " ", runtime.GOOS, "/", runtime.GOARCH, ")"),
+		serial.Concat("Accelerator ", Version(), " (", codename, ") ", build, " (", runtime.Version(), " ", runtime.GOOS, "/", runtime.GOARCH, ")"),
 		intro,
 	}
 }

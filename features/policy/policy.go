@@ -54,7 +54,7 @@ type System struct {
 	Buffer                Buffer
 }
 
-// Session is session based settings for controlling Vdonkey requests. It contains various settings (or limits) that may differ for different users in the context.
+// Session is session based settings for controlling Accelerator requests. It contains various settings (or limits) that may differ for different users in the context.
 type Session struct {
 	Timeouts Timeout // Timeout settings
 	Stats    Stats
@@ -70,7 +70,7 @@ type Manager interface {
 	// ForLevel returns the Session policy for the given user level.
 	ForLevel(level uint32) Session
 
-	// ForSystem returns the System policy for Vdonkey system.
+	// ForSystem returns the System policy for Accelerator system.
 	ForSystem() System
 }
 

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.policy;
-option csharp_namespace = "Vdonkey.Core.App.Policy";
+option csharp_namespace = "Accelerator.Core.App.Policy";
 option go_package = "github.com/vdonkey/accelerator/v5/app/policy";
 option java_package = "com.accelerator.core.app.policy";
 option java_multiple_files = true;

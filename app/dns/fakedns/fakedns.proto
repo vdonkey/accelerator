@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package accelerator.core.app.dns.fakedns;
-option csharp_namespace = "Vdonkey.Core.App.Dns.Fakedns";
+option csharp_namespace = "Accelerator.Core.App.Dns.Fakedns";
 option go_package = "github.com/vdonkey/accelerator/v5/app/dns/fakedns";
 option java_package = "com.accelerator.core.app.dns.fakedns";
 option java_multiple_files = true;

@@ -18,7 +18,7 @@ Recommends: accelerator-domain-list-community,
             accelerator-geoip,
             accelerator-geoip-only-cn-private
 Description: Library platform for building proxies in golang
- Project Vdonkey is a set of network tools that help you to build your
+ Project Accelerator is a set of network tools that help you to build your
  own computer network. It secures your network connections and thus
  protects your privacy.
 
@@ -26,7 +26,7 @@ Package: accelerator-domain-list-community
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Library platform for building proxies in golang (routing file)
- Project Vdonkey is a set of network tools that help you to build your
+ Project Accelerator is a set of network tools that help you to build your
  own computer network. It secures your network connections and thus
  protects your privacy.
 
@@ -34,7 +34,7 @@ Package: accelerator-geoip
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Library platform for building proxies in golang (routing file)
- Project Vdonkey is a set of network tools that help you to build your
+ Project Accelerator is a set of network tools that help you to build your
  own computer network. It secures your network connections and thus
  protects your privacy.
 
@@ -42,6 +42,6 @@ Package: accelerator-geoip-only-cn-private
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Library platform for building proxies in golang (routing file)
- Project Vdonkey is a set of network tools that help you to build your
+ Project Accelerator is a set of network tools that help you to build your
  own computer network. It secures your network connections and thus
  protects your privacy.

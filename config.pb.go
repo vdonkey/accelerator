@@ -22,7 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Config is the master config of Vdonkey. Vdonkey takes this config as input and
+// Config is the master config of Accelerator. Accelerator takes this config as input and
 // functions accordingly.
 type Config struct {
 	state         protoimpl.MessageState
@@ -34,7 +34,7 @@ type Config struct {
 	// Outbound handler configurations. Must have at least one item. The first
 	// item is used as default for routing.
 	Outbound []*OutboundHandlerConfig `protobuf:"bytes,2,rep,name=outbound,proto3" json:"outbound,omitempty"`
-	// App is for configurations of all features in Vdonkey. A feature must
+	// App is for configurations of all features in Accelerator. A feature must
 	// implement the Feature interface, and its config type must be registered
 	// through common.RegisterConfig.
 	App []*anypb.Any `protobuf:"bytes,4,rep,name=app,proto3" json:"app,omitempty"`
@@ -45,7 +45,7 @@ type Config struct {
 	// Deprecated: Marked as deprecated in config.proto.
 	Transport *transport.Config `protobuf:"bytes,5,opt,name=transport,proto3" json:"transport,omitempty"`
 	// Configuration for extensions. The config may not work if corresponding
-	// extension is not loaded into Vdonkey. Vdonkey will ignore such config during
+	// extension is not loaded into Accelerator. Accelerator will ignore such config during
 	// initialization.
 	Extension []*anypb.Any `protobuf:"bytes,6,rep,name=extension,proto3" json:"extension,omitempty"`
 }

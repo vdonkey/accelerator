@@ -16,7 +16,7 @@ const (
 )
 
 // Global transport settings. This affects all type of connections that go
-// through Vdonkey. Deprecated. Use each settings in StreamConfig.
+// through Accelerator. Deprecated. Use each settings in StreamConfig.
 //
 // Deprecated: Marked as deprecated in transport/config.proto.
 type Config struct {
