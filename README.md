@@ -1,8 +1,8 @@
 <div>
   <img width="190" height="210" align="left" src="https://raw.githubusercontent.com/v2fly/v2fly-github-io/master/docs/.vuepress/public/readme-logo.png" alt="Accelerator"/>
   <br>
-  <h1>Project V</h1>
-  <p>Project V is a set of network tools that helps you to build your own computer network. It secures your network connections and thus protects your privacy.</p>
+  <h1>Accelerator</h1>
+  <p>Accelerator is a set of network tools that helps you to build your own computer network. It secures your network connections and thus protects your privacy.</p>
 </div>
 
 [![GitHub Test Badge](https://github.com/vdonkey/accelerator/workflows/Test/badge.svg)](https://github.com/vdonkey/accelerator/actions)
